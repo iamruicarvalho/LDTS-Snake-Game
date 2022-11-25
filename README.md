@@ -99,6 +99,23 @@ We haven't implemented it yet but it will be used in order to make allow us to h
 • Open/Closed Principle. We can introduce new states without changing existing state classes  
   
   
+# 4.  
+##  DESIGN
+
+### Problem in Context:  
+For us to design different objects in our game that had very similar characteristics we needed a way to create new ones that share those same characteristics.
+
+  
+### -The Pattern  
+We used the FACTORY PATTER, which is a creational design pattern that provides an interface to create objects in a superclass, so that subclasses can alter the characteristics of the new object.
+  
+### -Implementation  
+We haven't implemented it yet but it will be used in order to make allow us to have multiple menus, also not implemented in the UML diagram.
+   
+### -Consequences  
+• It is now much easier to add different objects or elements to the game, for example, add new food, using the same characteristics as the previous ones.  
+  
+    
 # DATA CLASS  
   
  ## UML DIAGRAM:  
