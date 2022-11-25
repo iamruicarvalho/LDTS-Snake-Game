@@ -18,7 +18,7 @@ This project was devoloped by Cristiano Rocha (up202108183@fe.up.pt), Rui Carval
 
 ### Screenshots:  
  # MainMenu  
- ![MainMenu](/Images_Source/menu.png "MainMenu")  
+ ![MainMenu](/Images_Source/menu.PNG "MainMenu")  
  
  # SnakeInGame  
  ![SnakeInPlay](/Images_Source/MockUp_Snake.png "Snake")  
@@ -78,15 +78,27 @@ Template method design pattern is to define an algorithm as a skeleton of operat
    
 ### -Consequences  
 • Alows for the possibility to reuse the same algorithm in different instances of the program making only slight changes to fit the context in which we needed it. 
-
-
   
   
+# 3.  
+##  DESIGN
 
+### Problem in Context:  
+As we thought in the beginning of the project, we will try to have different states, such as game state, menu state and controls menu state.
 
- 
-
-
+  
+### -The Pattern  
+The second pattern we decided to use was the STATE PATTERN. This is a behavioral design pattern that lets an object alter its behavior depending on its state.    
+  
+### -Implementation  
+We haven't implemented it yet but it will be used in order to make allow us to have multiple menus, also not implemented in the UML diagram.
+   
+### -Consequences  
+• A better organization of the different screen the player will be seeing, providing an easier way of modifying a view (screen) if needed  
+• Single Responsibility Principle. The code related to each state are in separate classes   
+• Open/Closed Principle. We can introduce new states without changing existing state classes  
+  
+  
 # DATA CLASS  
   
  ## UML DIAGRAM:  
