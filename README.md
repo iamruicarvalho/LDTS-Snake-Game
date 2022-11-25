@@ -79,13 +79,13 @@ The main pattern we utilize as our architectural pattern was the MVC PATTERN (mo
       
       
 
-### -Consequences
+### -Consequences  
 
-The use of the State Pattern in the current design allows the following benefits:
+The use of the State Pattern in the current design allows the following benefits:  
 
-• Modification Don’t Affect The Entire Model
-• Faster Development Process
-• Faster Development Process
+• Modification Don’t Affect The Entire Model  
+• Faster Development Process  
+• Faster Development Process  
 
 
 
@@ -96,7 +96,7 @@ The use of the State Pattern in the current design allows the following benefits
 
 # DATA CLASS  
   
-()  
+(IMAGE DO UML DE CLASSES)  
   
 # TESTING  
 Not yet implemented.  
