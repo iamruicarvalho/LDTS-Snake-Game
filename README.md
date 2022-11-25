@@ -16,8 +16,13 @@ This project was devoloped by Cristiano Rocha (up202108183@fe.up.pt), Rui Carval
   >Menus -> user can select between a GUI menu by using ArrowUp, ArrowDown and ENTER to select the desired option. Present possible actions START and EXIT. LeaderBoard   not fully complete.
  SnakeSize -> On the top of the screen it is possible to look at the current size of the snake.
 
-
-
+### Screenshots:  
+ # MainMenu  
+ ![MainMenu](/Images_Source/menu.png "MainMenu")  
+ 
+ # SnakeInGame  
+ ![SnakeInPlay](/Images_Source/MockUp_Snake.png "Snake")  
+   
 ### PLANNED FEATURES
 
 >Menus -> Menu for GameOver where user can select if he wants to restart or go to main menu. Possibly add option for a multiplayer battle bettwen 2 players. Menu for pause with options to resume and or go back to main menu  
@@ -84,7 +89,12 @@ Template method design pattern is to define an algorithm as a skeleton of operat
 
 # DATA CLASS  
   
-(IMAGE DO UML DE CLASSES)  
+ ## UML DIAGRAM:  
+ ![UML](/Images_Source/UML.png "UML")  
+ Current UML state with exception of the class food that isn't implemented yet.  
+
+
+  
   
 # TESTING  
 Not yet implemented.  
