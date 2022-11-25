@@ -16,11 +16,11 @@ This project was devoloped by Cristiano Rocha (up202108183@fe.up.pt), Rui Carval
   >Menus -> user can select between a GUI menu by using ArrowUp, ArrowDown and ENTER to select the desired option. Present possible actions START and EXIT. LeaderBoard   not fully complete.
  SnakeSize -> On the top of the screen it is possible to look at the current size of the snake.
 
-### Screenshots:  
- # MainMenu  
+# Screenshots:  
+ ## MainMenu:    
  ![MainMenu](/Images_Source/menu.PNG "MainMenu")  
  
- # SnakeInGame  
+ ## SnakeInGame:  
  ![SnakeInPlay](/Images_Source/MockUp_Snake.png "Snake")  
    
 ### PLANNED FEATURES
@@ -70,7 +70,7 @@ We needed to use the same methods in different states, both of the game and the 
 
   
 ### -The Pattern  
-Template method design pattern is to define an algorithm as a skeleton of operations and leave the details to be implemented by the classes that use it. The overall structure and sequence of the algorithm are preserved by the core skeleton.  
+TEMPLATE PATTERN is used to define an algorithm as a skeleton of operations and leave the details to be implemented by the classes that use it. The overall structure and sequence of the algorithm are preserved by the core skeleton.  
 
 
 ### -Implementation  
@@ -107,11 +107,12 @@ For us to design different objects in our game that had very similar characteris
 
   
 ### -The Pattern  
-We used the FACTORY PATTER, which is a creational design pattern that provides an interface to create objects in a superclass, so that subclasses can alter the characteristics of the new object.
+We used the FACTORY PATTERN, which is a creational design pattern that provides an interface to create objects in a superclass, so that subclasses can alter the characteristics of the new object.
   
 ### -Implementation  
-We haven't implemented it yet but it will be used in order to make allow us to have multiple menus, also not implemented in the UML diagram.
+   ![Factory Pattern](/Images_Source/factory.png "Factory Pattern")  
    
+  
 ### -Consequences  
 • It is now much easier to add different objects or elements to the game, for example, add new food, using the same characteristics as the previous ones.  
   
