@@ -1,4 +1,4 @@
-## L03Gr08 - <PROJECT SnakeGameLDTS>
+# L03Gr08 - PROJECT SnakeGameLDTS
 
 ### GAME DESCRIPTION
 
@@ -86,9 +86,56 @@ The use of the State Pattern in the current design allows the following benefits
 • Modification Don’t Affect The Entire Model  
 • Faster Development Process  
 • Faster Development Process  
+  
+  
+# 2.  
+##  DESIGN
+
+### Problem in Context:  
+We needed to use the same methods in different states, both of the game and the menu, needing them to be using the same structure of algorithm.  
+
+  
+### -The Pattern  
+Template method design pattern is to define an algorithm as a skeleton of operations and leave the details to be implemented by the classes that use it. The overall structure and sequence of the algorithm are preserved by the core skeleton.  
 
 
+### -Implementation  
+(IMAGE)  
+  
+   
+  
+    
+  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
+### -Consequences  
+• Alows for the possibility to reuse the same algorithm in different instances of the program making only slight changes to fit the context in which we needed it. 
+
+
+  
+  
 
 
  
@@ -103,5 +150,7 @@ Not yet implemented.
 (…)  
   
 
-# SELF-EVALUATION
-(…)
+# SELF-EVALUATION  
+  Cristiano Rocha up202108813 100%  
+  Rui Carvalho up202108807 100%  
+  Guilherme Ribeiro up202108731 100%  
