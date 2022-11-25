@@ -49,38 +49,8 @@ The main pattern we utilize as our architectural pattern was the MVC PATTERN (mo
 
 
 ### -Implementation  
-![Model-View-Controller design](/Images_Source/what-is-mvc-design-pattern.jpg "MVC")
-
-
+![Model-View-Controller design](/Images_Source/what-is-mvc-design-pattern_cleanup.jpg "MVC")  
   
-   
-  
-    
-  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
 ### -Consequences  
 
 The use of the State Pattern in the current design allows the following benefits:  
@@ -102,36 +72,8 @@ Template method design pattern is to define an algorithm as a skeleton of operat
 
 
 ### -Implementation  
-(IMAGE)  
-  
+![Template Pattern](/Images_Source/LDTS_4.png "Template Pattern")  
    
-  
-    
-  
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
 ### -Consequences  
 • Alows for the possibility to reuse the same algorithm in different instances of the program making only slight changes to fit the context in which we needed it. 
 
