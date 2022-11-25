@@ -49,7 +49,9 @@ The main pattern we utilize as our architectural pattern was the MVC PATTERN (mo
 
 
 ### -Implementation  
-(IMAGE)  
+![Model-View-Controller design](/Images_Source/what-is-mvc-design-pattern.jpg "MVC")
+
+
   
    
   
