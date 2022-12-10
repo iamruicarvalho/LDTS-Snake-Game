@@ -93,4 +93,25 @@ public class SnakeControllerTest {
         assertEquals(true, snakeController.getLost());
 
     }
+    @Test
+    void HitBody() throws IOException, URISyntaxException, FontFormatException {
+        List<SnakeBody> snake = new ArrayList<>();
+        snake.add(new SnakeBody(12, 10));
+        snake.add(new SnakeBody(11, 10));
+        snake.add(new SnakeBody(10, 10));
+        snake.add(new SnakeBody(10, 11));
+        snake.add(new SnakeBody(10, 12));
+        arena.setSnake(snake);
+
+        snakeController.DirectionDown();
+        snakeController.step(game, GUI.ACTION.NONE, 1000);
+
+        snakeController.DirectionLeft();
+        snakeController.step(game, GUI.ACTION.NONE, 1000);
+
+        snakeController.DirectionUp();
+        snakeController.step(game, GUI.ACTION.NONE, 1000);
+
+        assertEquals( true, snakeController.getLost());
+    }
 }
