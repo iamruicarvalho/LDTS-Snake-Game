@@ -13,19 +13,31 @@ This project was devoloped by Cristiano Rocha (up202108183@fe.up.pt), Rui Carval
   ArrowRight -> Change snake direction to Right  
   ArrowLeft -> Change snake direction to Left  
     
+<<<<<<< HEAD
   >Menus -> user can select between a GUI mainMenu by using ArrowUp, ArrowDown and ENTER to select the desired option. Present possible actions START and EXIT. LeaderBoard   not fully complete.
+=======
+  >Menus -> user can select between a GUI menu by using ArrowUp, ArrowDown and ENTER to select the desired option. Present possible actions START and EXIT. LeaderBoard   not fully complete.
+>>>>>>> projeto/main
  SnakeSize -> On the top of the screen it is possible to look at the current size of the snake.
 
 # Screenshots:  
  ## MainMenu:    
+<<<<<<< HEAD
  ![MainMenu](/Images_Source/mainMenu.PNG "MainMenu")  
+=======
+ ![MainMenu](/Images_Source/menu.PNG "MainMenu")  
+>>>>>>> projeto/main
  
  ## SnakeInGame:  
  ![SnakeInPlay](/Images_Source/MockUp_Snake.png "Snake")  
    
 ### PLANNED FEATURES
 
+<<<<<<< HEAD
 >Menus -> Menu for GameOver where user can select if he wants to restart or go to main mainMenu. Possibly add option for a multiplayer battle bettwen 2 players. Menu for pause with options to resume and or go back to main mainMenu  
+=======
+>Menus -> Menu for GameOver where user can select if he wants to restart or go to main menu. Possibly add option for a multiplayer battle bettwen 2 players. Menu for pause with options to resume and or go back to main menu  
+>>>>>>> projeto/main
   
 >Colision Detection – the snake detects that it can’t go out of the Arena she is in and also that it can’t colide with herself  
   
@@ -33,11 +45,19 @@ This project was devoloped by Cristiano Rocha (up202108183@fe.up.pt), Rui Carval
   
 > Game Information – during gameplay on the top of the screen it will be possible to view the amount of food the snake as eaten and also how much time as passed since start playing  
   
+<<<<<<< HEAD
 > ScoreBoard – in the start mainMenu it is possible to view the highest Score(food eaten in one game) that a player was able to perform and associated with it will be the time it took him to accomplish that  
   
 > Escape -> Pause the game  
   
 > ENTER -> Select mainMenu option  
+=======
+> ScoreBoard – in the start menu it is possible to view the highest Score(food eaten in one game) that a player was able to perform and associated with it will be the time it took him to accomplish that  
+  
+> Escape -> Pause the game  
+  
+> ENTER -> Select menu option  
+>>>>>>> projeto/main
 
 # 1.  
 ##  DESIGN
@@ -66,7 +86,11 @@ The use of the State Pattern in the current design allows the following benefits
 ##  DESIGN
 
 ### Problem in Context:  
+<<<<<<< HEAD
 We needed to use the same methods in different states, both of the game and the mainMenu, needing them to be using the same structure of algorithm.  
+=======
+We needed to use the same methods in different states, both of the game and the menu, needing them to be using the same structure of algorithm.  
+>>>>>>> projeto/main
 
   
 ### -The Pattern  
@@ -84,7 +108,11 @@ TEMPLATE PATTERN is used to define an algorithm as a skeleton of operations and 
 ##  DESIGN
 
 ### Problem in Context:  
+<<<<<<< HEAD
 As we thought in the beginning of the project, we will try to have different states, such as game state, mainMenu state and controls mainMenu state.
+=======
+As we thought in the beginning of the project, we will try to have different states, such as game state, menu state and controls menu state.
+>>>>>>> projeto/main
 
   
 ### -The Pattern  

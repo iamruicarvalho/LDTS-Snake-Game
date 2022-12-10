@@ -20,7 +20,6 @@ import java.net.URL;
 
 public class LanternaGUI implements GUI {
     private Screen screen;
-
     public LanternaGUI(Screen screen) {
         this.screen = screen;
     }
@@ -50,12 +49,12 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadFont() throws URISyntaxException, FontFormatException, IOException {
+
         URL resource = getClass().getClassLoader().getResource("fonts/teste_2.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
-
         Font loadedFont = font.deriveFont(Font.PLAIN, 25);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         return fontConfig;
@@ -95,6 +94,8 @@ public class LanternaGUI implements GUI {
         tg.putString(position.getX(), position.getY(), text);
     }
 
+
+
     private void drawCharacter(int x, int y, char c, String color, String backcolor) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setBackgroundColor(TextColor.Factory.fromString(backcolor));
@@ -124,5 +125,4 @@ public class LanternaGUI implements GUI {
         tg.setForegroundColor(TextColor.Factory.fromString("#284A1F"));
         tg.fill(' ');
     }
-
 }

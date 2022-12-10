@@ -51,6 +51,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
                 if (line.charAt(x) == '.') walls.add(new Wall(x, y));
+
         }
 
         return walls;
@@ -65,7 +66,6 @@ public class LoaderArenaBuilder extends ArenaBuilder {
             for (int x = 0; x < line.length(); x++)
                 if (line.charAt(x) == '+') Snake.add(new SnakeBody(x, y));
         }
-
         return Snake;
     }
 

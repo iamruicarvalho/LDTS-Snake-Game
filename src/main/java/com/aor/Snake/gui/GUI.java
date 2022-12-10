@@ -11,7 +11,9 @@ public interface GUI {
 
     void drawSnakeBody(Position position);
 
+
     void drawText(Position position, String text, String color, String backcolor);
+
 
     void clear();
 
@@ -20,6 +22,5 @@ public interface GUI {
     void close() throws IOException;
 
     void changeBackgroundColor() throws IOException;
-
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
 }

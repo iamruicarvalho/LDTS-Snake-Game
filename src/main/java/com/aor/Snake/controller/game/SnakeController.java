@@ -95,3 +95,4 @@ public class SnakeController extends GameController {
         }
     }
 }
+

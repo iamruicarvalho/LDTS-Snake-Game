@@ -8,6 +8,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+
 public class ArenaController extends GameController {
     private final SnakeController snakeController;
     public ArenaController(Arena arena) {

@@ -9,3 +9,4 @@ public class SnakeViewer implements ElementViewer<SnakeBody> {
         gui.drawSnakeBody(snakeBody.getPosition());
     }
 }
+

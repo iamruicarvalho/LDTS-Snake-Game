@@ -21,10 +21,10 @@ public class GameViewer extends Viewer<Arena> {
         gui.drawText(new Position(0, 0), "SIZE: " + getModel().getSnake().size(), "#000000", "#21F20A");
     }
 
+
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {
-        for (T element : elements) {
+        for (T element : elements)
             drawElement(gui, element, viewer);
-        }
     }
 
     private <T extends Element> void drawElement(GUI gui, T element, ElementViewer<T> viewer) {
