@@ -93,5 +93,9 @@ public class SnakeController extends GameController {
         else {
             Lost = true;
         }
+
+        if (getModel().isApple(head.getPosition())){
+
+        }
     }
 }

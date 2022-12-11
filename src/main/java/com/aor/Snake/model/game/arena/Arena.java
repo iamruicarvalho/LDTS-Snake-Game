@@ -1,6 +1,7 @@
 package com.aor.Snake.model.game.arena;
 
 import com.aor.Snake.model.Position;
+import com.aor.Snake.model.game.elements.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 
@@ -12,6 +13,7 @@ public class Arena {
 
     private List<SnakeBody> Snake;
     private List<Wall> walls;
+    private Apple apple;
 
     public Arena(int width, int height) {
         this.width = width;
@@ -38,6 +40,14 @@ public class Arena {
 
     public void setSnake(List<SnakeBody> snake) {this.Snake = snake;}
 
+    public void setApple(Apple apple) {
+        this.apple = apple;
+    }
+
+    public Apple getApple() {
+        return this.apple;
+    }
+
     public boolean isEmpty(Position position) {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
@@ -46,5 +56,20 @@ public class Arena {
             if (body.getPosition().equals(position))
                 return false;
         return true;
+    }
+    public boolean isApple(Position position) {
+        if (position.equals(apple.getPosition())) {
+            Apple apple = getApple();
+            int max = 27;
+            int min = 2;
+            while (!isEmpty(apple.getPosition())) {
+                int randPosX = (int) Math.floor(Math.random() * (max - min + 1) + min);
+                int randPosY = (int) Math.floor(Math.random() * (max - min + 1) + min);
+                apple = new Apple(randPosX, randPosY);
+            }
+
+            setApple(apple);
+        }
+        return position.equals(apple.getPosition());
     }
 }

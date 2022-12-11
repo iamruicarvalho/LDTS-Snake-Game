@@ -26,23 +26,4 @@ public class AppleController extends GameController {
 
     }
 
-    private void showApple(Apple apple) {
-        List<Position> possiblePositions = new ArrayList<>();
-        int nrApples = 10;
-
-        //generate random positions
-        for (int i = 0; i < nrApples; i++) {
-            int randPosX = (int) Math.floor(Math.random() * (max-min+1) + min);
-            int randPosY = (int) Math.floor(Math.random() * (max-min+1) + min);
-
-            possiblePositions.add(new Position(randPosX, randPosY));
-        }
-        for (int i = 0; i < nrApples; i++) {
-            if (possiblePositions.get(i).equals(snake.getPosition())) {
-                
-            }
-        }
-
-    }
-
 }
