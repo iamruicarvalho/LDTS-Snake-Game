@@ -11,10 +11,9 @@ public interface GUI {
 
     void drawSnakeBody(Position position);
 
+    void drawApple(Position position);
 
     void drawText(Position position, String text, String color, String backcolor);
-
-
     void clear();
 
     void refresh() throws IOException;

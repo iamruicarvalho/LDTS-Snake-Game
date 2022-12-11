@@ -17,6 +17,8 @@ public class GameViewer extends Viewer<Arena> {
     public void drawElements(GUI gui) {
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElements(gui, getModel().getSnake(), new SnakeViewer());
+        drawElement(gui, getModel().getApple(), new AppleViewer());
+
 
         gui.drawText(new Position(0, 0), "SIZE: " + getModel().getSnake().size(), "#000000", "#21F20A");
     }

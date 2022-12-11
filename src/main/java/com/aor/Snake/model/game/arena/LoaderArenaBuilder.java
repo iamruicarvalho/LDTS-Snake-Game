@@ -1,5 +1,7 @@
 package com.aor.Snake.model.game.arena;
 
+
+import com.aor.Snake.model.game.elements.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 
@@ -13,6 +15,9 @@ import java.util.List;
 public class LoaderArenaBuilder extends ArenaBuilder {
     private final int level;
     private final List<String> lines;
+
+    private int max = 28;
+    private int min = 1;
 
     public LoaderArenaBuilder(int level) throws IOException {
         this.level = level;
@@ -51,7 +56,6 @@ public class LoaderArenaBuilder extends ArenaBuilder {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
                 if (line.charAt(x) == '.') walls.add(new Wall(x, y));
-
         }
 
         return walls;
@@ -66,7 +70,19 @@ public class LoaderArenaBuilder extends ArenaBuilder {
             for (int x = 0; x < line.length(); x++)
                 if (line.charAt(x) == '+') Snake.add(new SnakeBody(x, y));
         }
+
         return Snake;
+    }
+
+    @Override
+    protected Apple createApple() {
+        Apple apple;
+
+        int randPosX = (int) Math.floor(Math.random() * (max-min+1) + min);
+        int randPosY = (int) Math.floor(Math.random() * (max-min+1) + min);
+
+        apple = new Apple(randPosX, randPosY);
+        return apple;
     }
 
 }

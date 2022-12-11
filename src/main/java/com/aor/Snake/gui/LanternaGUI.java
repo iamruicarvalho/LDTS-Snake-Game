@@ -87,13 +87,17 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
+    public void drawApple(Position position) {
+        drawCharacter(position.getX(), position.getY(), '$', "#FF0000", "#000000");
+    }
+
+    @Override
     public void drawText(Position position, String text, String color, String backcolor) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setBackgroundColor(TextColor.Factory.fromString(backcolor));
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         tg.putString(position.getX(), position.getY(), text);
     }
-
 
 
     private void drawCharacter(int x, int y, char c, String color, String backcolor) {
@@ -117,7 +121,6 @@ public class LanternaGUI implements GUI {
     public void close() throws IOException {
         screen.close();
     }
-
     @Override
     public void changeBackgroundColor() {
         TextGraphics tg = screen.newTextGraphics();
@@ -125,4 +128,5 @@ public class LanternaGUI implements GUI {
         tg.setForegroundColor(TextColor.Factory.fromString("#284A1F"));
         tg.fill(' ');
     }
+
 }
