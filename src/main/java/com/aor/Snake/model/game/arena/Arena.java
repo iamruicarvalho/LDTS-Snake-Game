@@ -47,9 +47,11 @@ public class Arena {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
                 return false;
-        for (SnakeBody body: Snake)
+        for (SnakeBody body : Snake)
             if (body.getPosition().equals(position))
                 return false;
+        if (apple.getPosition().equals(position))
+            return false;
         return true;
     }
 
