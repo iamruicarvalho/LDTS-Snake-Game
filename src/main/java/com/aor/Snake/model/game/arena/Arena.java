@@ -58,18 +58,18 @@ public class Arena {
         return true;
     }
     public boolean isApple(Position position) {
+        Apple apple_aux = null;
         if (position.equals(apple.getPosition())) {
-            Apple apple = getApple();
             int max = 27;
             int min = 2;
-            while (!isEmpty(apple.getPosition())) {
+            while (apple_aux == null || !isEmpty(apple_aux.getPosition())) {
                 int randPosX = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 int randPosY = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                apple = new Apple(randPosX, randPosY);
+                apple_aux = new Apple(randPosX, randPosY);
             }
-
-            setApple(apple);
+            setApple(apple_aux);
+            return true;
         }
-        return position.equals(apple.getPosition());
+        return false;
     }
 }

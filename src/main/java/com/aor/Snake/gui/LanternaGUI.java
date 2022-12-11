@@ -88,7 +88,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawApple(Position position) {
-        drawCharacter(position.getX(), position.getY(), '$', "#FF0000", "#000000");
+        drawCharacter(position.getX(), position.getY(), '$', "#FF0000", "#284A1F");
     }
 
     @Override

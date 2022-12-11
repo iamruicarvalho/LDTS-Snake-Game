@@ -82,7 +82,16 @@ public class SnakeController extends GameController {
 
     private void moveBody(SnakeBody head) throws IOException, URISyntaxException, FontFormatException {
         List<SnakeBody> new_snake = new ArrayList<>();
-        if (getModel().isEmpty(head.getPosition())) {
+
+        if (getModel().isApple(head.getPosition())) {
+            new_snake.add(head);
+            //New Body
+            for (int i = 0; i < getModel().getSnake().size(); i++) {
+                new_snake.add(getModel().getSnake().get(i));
+            }
+            getModel().setSnake(new_snake);
+        }
+        else if (getModel().isEmpty(head.getPosition())) {
             new_snake.add(head);
             //New Body
             for (int i = 0; i < getModel().getSnake().size() - 1; i++) {
@@ -92,10 +101,6 @@ public class SnakeController extends GameController {
         }
         else {
             Lost = true;
-        }
-
-        if (getModel().isApple(head.getPosition())){
-
         }
     }
 }
