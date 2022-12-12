@@ -1,7 +1,7 @@
 package com.aor.Snake;
 
 import com.aor.Snake.gui.LanternaGUI;
-import com.aor.Snake.model.menu.mainMenu;
+import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.states.MainMenuState;
 import com.aor.Snake.states.State;
 
@@ -15,7 +15,7 @@ public class Game {
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(29, 29);
-        this.state = new MainMenuState(new mainMenu());
+        this.state = new MainMenuState(new MainMenu());
 
     }
 

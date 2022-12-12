@@ -3,12 +3,12 @@ package com.aor.Snake.model.menu;
 import java.util.Arrays;
 import java.util.List;
 
-public class mainMenu {
+public class MenuControls {
     private final List<String> entries;
     private int currentEntry = 0;
 
-    public mainMenu() {
-        this.entries = Arrays.asList("START $", "SCOREBOARD", "EXIT");
+    public MenuControls() {
+        this.entries = Arrays.asList("BACK", "EXIT");
     }
 
     public void nextEntry() {
@@ -32,15 +32,10 @@ public class mainMenu {
     }
 
     public boolean isSelectedExit() {
-        return isSelected(2);
-    }
-
-
-    public boolean isSelectedScoreBoard() {
         return isSelected(1);
     }
 
-    public boolean isSelectedStart() {
+    public boolean isSelectedBack() {
         return isSelected(0);
     }
 

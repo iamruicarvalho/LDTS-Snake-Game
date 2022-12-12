@@ -3,24 +3,26 @@ package com.aor.Snake.controller.menu;
 import com.aor.Snake.Game;
 import com.aor.Snake.controller.Controller;
 import com.aor.Snake.gui.GUI;
-import com.aor.Snake.model.menu.ScoreBoardMenu;
 import com.aor.Snake.model.menu.MainMenu;
+import com.aor.Snake.model.menu.MenuControls;
 import com.aor.Snake.states.MainMenuState;
 
 import java.io.IOException;
 
-public class ScoreBoardMenuController extends Controller<ScoreBoardMenu> {
+public class MenuControlsController extends Controller<MenuControls>  {
 
-    public ScoreBoardMenuController(ScoreBoardMenu scoreBoardMenu) {
-        super(scoreBoardMenu);
+
+    public MenuControlsController(MenuControls menuControls) {
+        super(menuControls);
     }
+
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         switch (action) {
-            case UP:
+            case LEFT:
                 getModel().previousEntry();
                 break;
-            case DOWN:
+            case RIGHT:
                 getModel().nextEntry();
                 break;
             case SELECT:

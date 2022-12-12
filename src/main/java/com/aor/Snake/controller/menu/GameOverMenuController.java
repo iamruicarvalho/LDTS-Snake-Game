@@ -6,7 +6,7 @@ import com.aor.Snake.controller.Controller;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.arena.LoaderArenaBuilder;
 import com.aor.Snake.model.menu.GameOverMenu;
-import com.aor.Snake.model.menu.mainMenu;
+import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.states.GameState;
 import com.aor.Snake.states.MainMenuState;
 
@@ -29,7 +29,7 @@ public class GameOverMenuController extends Controller<GameOverMenu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedMenu()) game.setState(new MainMenuState(new mainMenu()));
+                if (getModel().isSelectedMenu()) game.setState(new MainMenuState(new MainMenu()));
                 if (getModel().isSelectedRestart()) game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
         }
     }

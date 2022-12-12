@@ -2,11 +2,11 @@ package com.aor.Snake.viewer.menu;
 
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.menu.mainMenu;
+import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.viewer.Viewer;
 
-public class MainMenuViewer extends Viewer<mainMenu> {
-    public MainMenuViewer(mainMenu mainMenu) {
+public class MainMenuViewer extends Viewer<MainMenu> {
+    public MainMenuViewer(MainMenu mainMenu) {
         super(mainMenu);
     }
 

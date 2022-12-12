@@ -5,7 +5,7 @@ import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.menu.GameOverMenu;
-import com.aor.Snake.model.menu.mainMenu;
+import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.states.GameOverMenuState;
 import com.aor.Snake.states.MainMenuState;
 
@@ -36,7 +36,7 @@ public class SnakeController extends GameController {
         if (action == GUI.ACTION.RIGHT) DirectionRight();
         if (action == GUI.ACTION.DOWN) DirectionDown();
         if (action == GUI.ACTION.LEFT) DirectionLeft();
-        if (action == GUI.ACTION.QUIT) game.setState(new MainMenuState(new mainMenu()));
+        if (action == GUI.ACTION.QUIT) game.setState(new MainMenuState(new MainMenu()));
         if (Lost) {
 
             URL resource = SnakeController.class.getResource("/Score/score.txt");
