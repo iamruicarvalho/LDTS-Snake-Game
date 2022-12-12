@@ -2,9 +2,11 @@ package com.aor.Snake.Controller.model;
 
 import com.aor.Snake.Game;
 import com.aor.Snake.controller.game.SnakeController;
+import com.aor.Snake.model.Position;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
+import com.aor.Snake.model.game.elements.Wall;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -34,7 +36,11 @@ public class ArenaModelTest {
         snake.add(new SnakeBody(10, 11));
         arena.setSnake(snake);
 
-        arena.setWalls(Arrays.asList());
+        List<Wall> walls = new ArrayList<>();
+        walls.add(new Wall(28,28));
+        arena.setWalls(walls);
+
+
         snakeController = new SnakeController(arena);
         game = Mockito.mock(Game.class);
     }
@@ -44,4 +50,17 @@ public class ArenaModelTest {
         assertEquals(true, arena.isApple(arena.getApple().getPosition()));
     }
 
+    @Test
+    void isEmptyWorking(){
+
+        //Walls
+        assertEquals(false, arena.isEmpty(arena.getWalls().get(0).getPosition()));
+
+        //SnakeBody
+        assertEquals(false, arena.isEmpty(arena.getSnake().get(0).getPosition()));
+
+        //EmptySpace
+        assertEquals(true, arena.isEmpty(new Position(15, 15)));
+
+    }
 }
