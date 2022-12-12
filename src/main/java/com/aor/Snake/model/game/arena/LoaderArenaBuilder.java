@@ -1,6 +1,5 @@
 package com.aor.Snake.model.game.arena;
 
-
 import com.aor.Snake.model.Position;
 import com.aor.Snake.model.game.elements.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;

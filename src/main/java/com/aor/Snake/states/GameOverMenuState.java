@@ -1,5 +1,6 @@
 package com.aor.Snake.states;
 
+
 import com.aor.Snake.controller.Controller;
 import com.aor.Snake.controller.menu.GameOverMenuController;
 import com.aor.Snake.model.menu.GameOverMenu;
@@ -20,4 +21,5 @@ public class GameOverMenuState extends State<GameOverMenu> {
         return new GameOverMenuController(getModel());
     }
 }
+
 

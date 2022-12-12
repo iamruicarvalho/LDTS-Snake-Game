@@ -2,6 +2,7 @@ package com.aor.Snake.controller;
 
 import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
+
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;

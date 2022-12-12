@@ -4,9 +4,11 @@ import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.SnakeBody;
+
 import com.aor.Snake.model.menu.GameOverMenu;
 import com.aor.Snake.model.menu.mainMenu;
 import com.aor.Snake.states.GameOverMenuState;
+
 import com.aor.Snake.states.MainMenuState;
 
 import java.awt.*;
@@ -103,7 +105,10 @@ public class SnakeController extends GameController {
             Lost = true;
         }
     }
-    public boolean getLost(){
+
+
+
+    public boolean getLost() {
         return this.Lost;
     }
 }

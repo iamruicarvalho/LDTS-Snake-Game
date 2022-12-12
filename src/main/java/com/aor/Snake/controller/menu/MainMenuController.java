@@ -7,6 +7,7 @@ import com.aor.Snake.model.game.arena.LoaderArenaBuilder;
 import com.aor.Snake.model.menu.ScoreBoardMenu;
 import com.aor.Snake.model.menu.mainMenu;
 import com.aor.Snake.states.GameState;
+
 import com.aor.Snake.states.ScoreBoardMenuState;
 
 import java.io.IOException;

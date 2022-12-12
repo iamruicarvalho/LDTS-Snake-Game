@@ -1,6 +1,7 @@
 package com.aor.Snake.controller.menu;
 
 
+
 import com.aor.Snake.Game;
 import com.aor.Snake.controller.Controller;
 import com.aor.Snake.gui.GUI;
@@ -34,3 +35,4 @@ public class GameOverMenuController extends Controller<GameOverMenu> {
         }
     }
 }
+

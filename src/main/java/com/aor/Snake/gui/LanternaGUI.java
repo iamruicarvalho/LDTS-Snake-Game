@@ -12,6 +12,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.net.URL;
 
 public class LanternaGUI implements GUI {
     private Screen screen;
+
     public LanternaGUI(Screen screen) {
         this.screen = screen;
     }
@@ -55,6 +57,7 @@ public class LanternaGUI implements GUI {
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
+
         Font loadedFont = font.deriveFont(Font.PLAIN, 25);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         return fontConfig;
@@ -79,6 +82,7 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawWall(Position position) {
         drawCharacter(position.getX(), position.getY(), '.', "#FFFF00", "#000000");
+
     }
 
     @Override
@@ -92,13 +96,13 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
+
     public void drawText(Position position, String text, String color, String backcolor) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setBackgroundColor(TextColor.Factory.fromString(backcolor));
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         tg.putString(position.getX(), position.getY(), text);
     }
-
 
     private void drawCharacter(int x, int y, char c, String color, String backcolor) {
         TextGraphics tg = screen.newTextGraphics();
@@ -121,6 +125,7 @@ public class LanternaGUI implements GUI {
     public void close() throws IOException {
         screen.close();
     }
+
     @Override
     public void changeBackgroundColor() {
         TextGraphics tg = screen.newTextGraphics();
