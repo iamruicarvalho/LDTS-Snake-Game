@@ -3,13 +3,11 @@ package com.aor.Snake.controller.menu;
 import com.aor.Snake.Game;
 import com.aor.Snake.controller.Controller;
 import com.aor.Snake.gui.GUI;
-import com.aor.Snake.model.game.arena.LoaderArenaBuilder;
 import com.aor.Snake.model.menu.DificultyMenu;
 import com.aor.Snake.model.menu.MenuControls;
 import com.aor.Snake.model.menu.ScoreBoardMenu;
 import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.states.DificultyMenuState;
-import com.aor.Snake.states.GameState;
 import com.aor.Snake.states.MenuControlsState;
 import com.aor.Snake.states.ScoreBoardMenuState;
 

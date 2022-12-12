@@ -4,20 +4,21 @@ import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.SnakeBody;
+
 import com.aor.Snake.model.menu.GameOverMenu;
-import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.states.GameOverMenuState;
-import com.aor.Snake.states.MainMenuState;
 
 import java.awt.*;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
+
+import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class SnakeController extends GameController {
-
     private String Direction = "Left";
     private boolean Lost = false;
     public SnakeController(Arena arena) {
@@ -126,4 +127,9 @@ public class SnakeController extends GameController {
             Lost = true;
         }
     }
+
+    public boolean getLost() {
+        return this.Lost;
+    }
+
 }
