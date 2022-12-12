@@ -20,6 +20,6 @@ public interface GUI {
 
     void close() throws IOException;
 
-    void changeBackgroundColor() throws IOException;
+    void changeBackgroundColor(String color, String backcolor) throws IOException;
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
 }

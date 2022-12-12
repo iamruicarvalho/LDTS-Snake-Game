@@ -17,7 +17,6 @@ public abstract class Viewer<T> {
 
     public void draw(GUI gui) throws IOException {
         gui.clear();
-        gui.changeBackgroundColor();
         drawElements(gui);
         gui.refresh();
     }

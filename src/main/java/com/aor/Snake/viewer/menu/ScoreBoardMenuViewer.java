@@ -15,13 +15,13 @@ public class ScoreBoardMenuViewer extends Viewer<ScoreBoardMenu> {
 
     @Override
     protected void drawElements(GUI gui) throws IOException {
-        gui.drawText(new Position(8, 10), "SCOREBOARD", "#21F20A", "#000000");
-        gui.drawText(new Position(6, 11), "BEST SCORE: " + getModel().gethightScore(), "#FFD700", "#000000");
+        gui.drawText(new Position(7, 10), "@ SCOREBOARD @", "#000CFF", "#000000");
+        gui.drawText(new Position(6, 12), "BEST SCORE: " + getModel().gethightScore(), "#FFD700", "#000000");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(
-                    new Position(10, 13 + i),
+                    new Position(6 + (i*10), 15),
                     getModel().getEntry(i),
-                    getModel().isSelected(i) ? "#EA0D0D" : "#21F20A", "#000000");
+                    getModel().isSelected(i) ? "#D97F02" : "#FFFFFF", "#000000");
     }
 }

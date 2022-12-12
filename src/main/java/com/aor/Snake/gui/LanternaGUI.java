@@ -65,7 +65,7 @@ public class LanternaGUI implements GUI {
         if (keyStroke == null) return ACTION.NONE;
 
         if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
+        if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'q' || keyStroke.getCharacter() == 'Q')) return ACTION.QUIT;
 
         if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
@@ -78,17 +78,17 @@ public class LanternaGUI implements GUI {
     }
     @Override
     public void drawWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), '.', "#FFFF00", "#000000");
+        drawCharacter(position.getX(), position.getY(), '.', "#FFFFFF", "#000000");
     }
 
     @Override
     public void drawSnakeBody(Position position) {
-        drawCharacter(position.getX(), position.getY(), '+', "#000000", "#21F20A");
+        drawCharacter(position.getX(), position.getY(), '+', "#000000", "#00A517");
     }
 
     @Override
     public void drawApple(Position position) {
-        drawCharacter(position.getX(), position.getY(), '$', "#FF0000", "#284A1F");
+        drawCharacter(position.getX(), position.getY(), '$', "#FF0000", "#000000");
     }
 
     @Override
@@ -121,10 +121,10 @@ public class LanternaGUI implements GUI {
         screen.close();
     }
     @Override
-    public void changeBackgroundColor() {
+    public void changeBackgroundColor(String color, String backcolor) {
         TextGraphics tg = screen.newTextGraphics();
-        tg.setBackgroundColor(TextColor.Factory.fromString("#284A1F"));
-        tg.setForegroundColor(TextColor.Factory.fromString("#284A1F"));
+        tg.setBackgroundColor(TextColor.Factory.fromString(color));
+        tg.setForegroundColor(TextColor.Factory.fromString(backcolor));
         tg.fill(' ');
     }
 
