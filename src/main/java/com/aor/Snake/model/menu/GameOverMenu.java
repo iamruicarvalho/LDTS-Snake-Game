@@ -6,8 +6,7 @@ import java.util.List;
 public class GameOverMenu {
     private final List<String> entries;
     private int currentEntry = 0;
-
-    private int score;
+    private int score = 0;
 
     public GameOverMenu() {
         this.entries = Arrays.asList("RESTART", "MENU", "EXIT");

@@ -13,6 +13,8 @@ public class Game {
     private final LanternaGUI gui;
     private State state;
 
+    private int FPS = 10;
+
     public Game() throws FontFormatException, IOException, URISyntaxException {
         this.gui = new LanternaGUI(29, 29);
         this.state = new MainMenuState(new MainMenu());
@@ -30,12 +32,14 @@ public class Game {
     public void setState(State state) {
         this.state = state;
     }
+    public void setFPS(int FPS) {
+        this.FPS = FPS;
+    }
 
     private void start() throws IOException, URISyntaxException, FontFormatException {
-        int FPS = 15;
-        int frameTime = 1000 / FPS;
 
         while (this.state != null) {
+            int frameTime = 1000 / FPS;
             long startTime = System.currentTimeMillis();
 
             state.step(this, gui, startTime);

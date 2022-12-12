@@ -36,7 +36,7 @@ public class SnakeController extends GameController {
         if (action == GUI.ACTION.RIGHT) DirectionRight();
         if (action == GUI.ACTION.DOWN) DirectionDown();
         if (action == GUI.ACTION.LEFT) DirectionLeft();
-        if (action == GUI.ACTION.QUIT) game.setState(new MainMenuState(new MainMenu()));
+        if (action == GUI.ACTION.QUIT) game.setState(null);
         if (Lost) {
 
             URL resource = SnakeController.class.getResource("/Score/score.txt");
