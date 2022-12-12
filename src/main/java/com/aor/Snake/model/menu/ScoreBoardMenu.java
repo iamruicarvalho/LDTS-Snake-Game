@@ -1,5 +1,10 @@
 package com.aor.Snake.model.menu;
 
+import com.aor.Snake.controller.game.SnakeController;
+
+import java.io.*;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,7 +13,23 @@ public class ScoreBoardMenu {
     private int currentEntry = 0;
 
     public ScoreBoardMenu() {
-        this.entries = Arrays.asList("IDK", "BACK", "EXIT");
+        this.entries = Arrays.asList("BACK", "EXIT");
+    }
+
+    public String gethightScore() throws IOException {
+        URL resource = SnakeController.class.getResource("/Score/score.txt");
+        File file = new File(resource.getFile());
+        List<String> lines = new ArrayList<>();
+
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(resource.getFile()));
+
+        for (String line; (line = bufferedReader.readLine()) != null;)
+            lines.add(line);
+
+        if (!lines.isEmpty()) {
+            return lines.get(0);
+        }
+        return "";
     }
 
     public void nextEntry() {
@@ -31,15 +52,10 @@ public class ScoreBoardMenu {
     }
 
     public boolean isSelectedExit() {
-        return isSelected(2);
-    }
-
-
-    public boolean isSelectedBack() {
         return isSelected(1);
     }
 
-    public boolean isSelectedTest() {
+    public boolean isSelectedBack() {
         return isSelected(0);
     }
 

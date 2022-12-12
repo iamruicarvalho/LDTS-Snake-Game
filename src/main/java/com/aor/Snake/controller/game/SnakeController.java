@@ -10,8 +10,9 @@ import com.aor.Snake.states.GameOverMenuState;
 import com.aor.Snake.states.MainMenuState;
 
 import java.awt.*;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +37,29 @@ public class SnakeController extends GameController {
         if (action == GUI.ACTION.DOWN) DirectionDown();
         if (action == GUI.ACTION.LEFT) DirectionLeft();
         if (action == GUI.ACTION.QUIT) game.setState(new MainMenuState(new mainMenu()));
-        if (Lost) game.setState(new GameOverMenuState(new GameOverMenu()));
+        if (Lost) {
+
+            URL resource = SnakeController.class.getResource("/Score/score.txt");
+            Integer score = getModel().getSnake().size();
+            File file = new File(resource.getFile());
+            List<String> lines = new ArrayList<>();
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(resource.getFile()));
+
+            for (String line; (line = bufferedReader.readLine()) != null;)
+                lines.add(line);
+
+            if (lines.isEmpty() || score > Integer.valueOf(lines.get(0))) {
+                FileWriter fileWriter = new FileWriter(file, false);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                bufferedWriter.write(score.toString() + '\n');
+                bufferedWriter.close();
+            }
+            GameOverMenu gameOverMenu = new GameOverMenu();
+            gameOverMenu.setScore(score);
+            game.setState(new GameOverMenuState(gameOverMenu));
+
+        }
 
     }
 

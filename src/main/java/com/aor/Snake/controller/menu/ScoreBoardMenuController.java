@@ -25,7 +25,6 @@ public class ScoreBoardMenuController extends Controller<ScoreBoardMenu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedTest()) game.setState(null);
                 if (getModel().isSelectedBack()) game.setState(new MainMenuState(new mainMenu()));
         }
     }

@@ -22,5 +22,5 @@ public abstract class Viewer<T> {
         gui.refresh();
     }
 
-    protected abstract void drawElements(GUI gui);
+    protected abstract void drawElements(GUI gui) throws IOException;
 }

@@ -7,11 +7,9 @@ import com.aor.Snake.viewer.Viewer;
 import com.aor.Snake.viewer.menu.GameOverMenuViewer;
 
 public class GameOverMenuState extends State<GameOverMenu> {
-
     public GameOverMenuState(GameOverMenu model) {
         super(model);
     }
-
     @Override
     protected Viewer<GameOverMenu> getViewer() {return new GameOverMenuViewer(getModel());}
 

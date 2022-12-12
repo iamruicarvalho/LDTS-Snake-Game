@@ -7,9 +7,15 @@ public class GameOverMenu {
     private final List<String> entries;
     private int currentEntry = 0;
 
+    private int score;
+
     public GameOverMenu() {
         this.entries = Arrays.asList("RESTART", "MENU", "EXIT");
     }
+
+    public void setScore(int score) {this.score = score;}
+    public int getScore() {return score;}
+
 
     public void nextEntry() {
         currentEntry++;

@@ -12,12 +12,12 @@ public class MainMenuViewer extends Viewer<mainMenu> {
 
     @Override
     public void drawElements(GUI gui) {
-        gui.drawText(new Position(10, 10), "SNAKE GAME @", "#000000", "#21F20A");
+        gui.drawText(new Position(9, 10), "SNAKE GAME", "#21F20A", "#000000");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(
                     new Position(10, 13 + i),
                     getModel().getEntry(i),
-                    getModel().isSelected(i) ? "#EA0D0D" : "#000000", "#21F20A");
+                    getModel().isSelected(i) ? "#EA0D0D" : "#21F20A", "#000000");
     }
 }

@@ -20,7 +20,7 @@ public class GameViewer extends Viewer<Arena> {
         drawElement(gui, getModel().getApple(), new AppleViewer());
 
 
-        gui.drawText(new Position(0, 0), "SIZE: " + getModel().getSnake().size(), "#000000", "#21F20A");
+        gui.drawText(new Position(0, 0), "SIZE: " + getModel().getSnake().size(), "#FFD700", "#000000");
     }
 
 
