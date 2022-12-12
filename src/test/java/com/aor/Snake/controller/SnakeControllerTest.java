@@ -1,17 +1,13 @@
-package com.aor.Snake.Controller;
+package com.aor.Snake.controller;
 
 import com.aor.Snake.Game;
 import com.aor.Snake.controller.game.SnakeController;
-import com.aor.Snake.controller.menu.MainMenuController;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
 import com.aor.Snake.model.game.arena.Arena;
+import com.aor.Snake.model.game.elements.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
-import com.aor.Snake.model.menu.mainMenu;
-import com.aor.Snake.states.GameState;
-import com.aor.Snake.states.MainMenuState;
-import com.sun.tools.javac.Main;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -24,16 +20,22 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class SnakeControllerTest {
     private SnakeController snakeController;
     private Arena arena;
     private Game game;
 
+    private Apple apple;
+
 
     @BeforeEach
     void setup() {
         arena = new Arena(29, 29);
+
+        apple = new Apple(9, 10);
+        arena.setApple(apple);
 
         arena.setWalls(Arrays.asList());
 
@@ -113,5 +115,32 @@ public class SnakeControllerTest {
         snakeController.step(game, GUI.ACTION.NONE, 1000);
 
         assertEquals( true, snakeController.getLost());
+    }
+    @Test
+    void checkEatApple() throws IOException, URISyntaxException, FontFormatException {
+
+        List<SnakeBody> snake = new ArrayList<>();
+        snake.add(new SnakeBody(10, 10));
+        snake.add(new SnakeBody(10, 11));
+        arena.setSnake(snake);
+
+        snakeController.DirectionLeft();
+        snakeController.step(game, GUI.ACTION.NONE, 1000);
+
+
+        assertEquals(3, arena.getSnake().size());
+    }
+    @Test
+    void checkAppleMove() throws IOException, URISyntaxException, FontFormatException {
+        List<SnakeBody> snake = new ArrayList<>();
+        snake.add(new SnakeBody(10, 10));
+        snake.add(new SnakeBody(10, 11));
+        arena.setSnake(snake);
+
+        snakeController.DirectionLeft();
+        snakeController.step(game, GUI.ACTION.NONE, 1000);
+
+        assertNotEquals(true, arena.isApple(apple.getPosition()));
+        assertNotEquals(true, arena.isApple(arena.getSnake().get(0).getPosition()));
     }
 }

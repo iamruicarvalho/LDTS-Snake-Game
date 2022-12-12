@@ -3,6 +3,7 @@ package com.aor.Snake.viewer;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
 import com.aor.Snake.model.game.arena.Arena;
+import com.aor.Snake.model.game.elements.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 import com.aor.Snake.viewer.game.GameViewer;
@@ -22,6 +23,7 @@ public class ArenaViewerTest {
     private GameViewer viewer;
     private SnakeViewer snakeViewer;
     private Arena arena;
+    private Apple apple;
 
     @BeforeEach
     void setup(){
@@ -29,6 +31,8 @@ public class ArenaViewerTest {
         gui = Mockito.mock(GUI.class);
         viewer = new GameViewer(arena);
         snakeViewer = new SnakeViewer();
+        apple = new Apple(10, 10);
+        arena.setApple(apple);
 
         arena.setWalls(Arrays.asList(new Wall(1,2), new Wall(2,3), new Wall(3,4)));
         arena.setSnake( new ArrayList<>());
@@ -36,7 +40,7 @@ public class ArenaViewerTest {
         snake.add(new SnakeBody(10, 10));
         snake.add(new SnakeBody(10, 11));
     }
-    
+
     @Test
     void drawWalls() throws IOException {
         viewer.draw(gui);
