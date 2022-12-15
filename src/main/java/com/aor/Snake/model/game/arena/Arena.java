@@ -62,7 +62,7 @@ public class Arena {
         if (position.equals(apple.getPosition())) {
             int max = 27;
             int min = 2;
-            while (apple_aux == null || !isEmpty(apple_aux.getPosition())) {
+            while (apple_aux == null || !isEmpty(apple_aux.getPosition()) || apple.getPosition() == apple_aux.getPosition()) {
                 int randPosX = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 int randPosY = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 apple_aux = new Apple(randPosX, randPosY);
