@@ -1,8 +1,7 @@
 package com.aor.Snake.model;
 
 import com.aor.Snake.Game;
-import com.aor.Snake.controller.game.SnakeController;
-import com.aor.Snake.model.Position;
+import com.aor.Snake.Controller.game.SnakeController;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
@@ -15,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ArenaModelTest {

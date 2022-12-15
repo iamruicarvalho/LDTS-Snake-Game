@@ -1,7 +1,7 @@
-package com.aor.Snake.controller.menu;
+package com.aor.Snake.Controller.menu;
 
 import com.aor.Snake.Game;
-import com.aor.Snake.controller.Controller;
+import com.aor.Snake.Controller.Controller;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.arena.LoaderArenaBuilder;
 import com.aor.Snake.model.menu.DificultyMenu;

@@ -1,7 +1,7 @@
-package com.aor.Snake.controller;
+package com.aor.Snake.Controller;
 
 import com.aor.Snake.Game;
-import com.aor.Snake.controller.game.SnakeController;
+import com.aor.Snake.Controller.game.SnakeController;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
 import com.aor.Snake.model.game.arena.Arena;

@@ -1,9 +1,6 @@
 package com.aor.Snake.viewer;
 
-import com.aor.Snake.Game;
-import com.aor.Snake.controller.game.SnakeController;
 import com.aor.Snake.gui.GUI;
-import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.viewer.game.SnakeViewer;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SnakeViewerTest {

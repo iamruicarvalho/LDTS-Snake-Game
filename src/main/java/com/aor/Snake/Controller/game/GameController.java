@@ -1,6 +1,6 @@
-package com.aor.Snake.controller.game;
+package com.aor.Snake.Controller.game;
 
-import com.aor.Snake.controller.Controller;
+import com.aor.Snake.Controller.Controller;
 import com.aor.Snake.model.game.arena.Arena;
 
 public abstract class GameController extends Controller<Arena> {

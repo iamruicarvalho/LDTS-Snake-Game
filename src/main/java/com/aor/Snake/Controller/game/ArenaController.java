@@ -1,4 +1,4 @@
-package com.aor.Snake.controller.game;
+package com.aor.Snake.Controller.game;
 
 import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;

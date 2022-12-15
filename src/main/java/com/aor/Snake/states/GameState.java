@@ -1,7 +1,7 @@
 package com.aor.Snake.states;
 
-import com.aor.Snake.controller.Controller;
-import com.aor.Snake.controller.game.ArenaController;
+import com.aor.Snake.Controller.Controller;
+import com.aor.Snake.Controller.game.ArenaController;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.viewer.Viewer;
 import com.aor.Snake.viewer.game.GameViewer;

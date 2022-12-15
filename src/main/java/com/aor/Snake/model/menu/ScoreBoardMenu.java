@@ -1,6 +1,6 @@
 package com.aor.Snake.model.menu;
 
-import com.aor.Snake.controller.game.SnakeController;
+import com.aor.Snake.Controller.game.SnakeController;
 
 import java.io.*;
 import java.net.URL;
