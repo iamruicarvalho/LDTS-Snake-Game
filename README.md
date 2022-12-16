@@ -7,14 +7,30 @@
 
 ### IMPLEMENTED FEATURES
 
->Keyboard Controls – Functionality of each Button:  
+> KEYBOARD CONTROLS – Functionality of each Button:  
 ArrowUp -> Change snake direction to Up / Move Up Menu  
 ArrowDown -> Change snake direction to Down / Move Down Menu  
 ArrowRight -> Change snake direction to Right  
-ArrowLeft -> Change snake direction to Left  
-> Menus -> the user can select between a GUI mainMenu by using ArrowUp, ArrowDown and ENTER to select the desired option. Presented possible actions START and EXIT. LeaderBoard keeps the highest score.
-> SnakeSize -> On top of the screen it is possible to look at the current score (which corresponds to the current size of the snake).
+ArrowLeft -> Change snake direction to Left
 
+> MENUS:  
+> The user can select between a GUI mainMenu by using ArrowUp, ArrowDown and ENTER to select the desired option. Presented possible actions START, CONTROLS, SCOREBOARD and EXIT. LeaderBoard keeps the highest score.
+>
+> In the mainMenu:  
+> Selected the START option, a DIFFICULTY menu pops up, where the player can select between EASY, MEDIUM and HARD difficulty.    
+> If the player needs to check the controls, it must be selected the CONTROLS option, where a controls' guide pops up on the screen, allowing the player to see which controls to use in order to perform any move in the game.    
+> To see the best score ever achieved in one try, the player must select the SCOREBOARD option.  
+> Selected any of the options listed above, the player can also decide to go BACK to the mainMenu or EXIT the game.  
+> To EXIT the game, the last option must be selected.
+
+> When the player lose, it is shown a GAMEOVER menu. In that menu, the player can see the score obtained in his most recent try, and select between RESTART, to play again, MENU, to go back to the mainMenu or EXIT, to exit the game.
+
+> SnakeSize -> On top of the screen it is possible to look at the current score (which corresponds to the current size of the snake), which starts at 3 and will be increased by 1 everytime a spawn is eaten.
+
+> Collision Detection – the snake detects that she can’t go out of the Arena she is in nor collide with herself.
+
+> Apple – a single spawn appears in a random position on the Arena (except in the ones previously occupied by the snake's body and in the most recent position the spawn has been randomly generated) and disappears when the snake eats it. Another single spawn appears in a different random position immediately after being eaten.
+  
 # Screenshots:
 ## MainMenu:
 ![MainMenu](/Images_Source/mainMenu.PNG "MainMenu")
@@ -33,22 +49,11 @@ ArrowLeft -> Change snake direction to Left
   
 ## GameOverMenu
 ![GAMEOVER](/Images_Source/gameOverMenu.PNG "GAMEOVER")
-
-
+  
 ### PLANNED FEATURES
 
-> Menus -> Menu for GameOver where the user can select if he wants to restart or go to the mainMenu. We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a menu for pause with options to resume or go back to mainMenu.
+>We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
 However, none of these features were implemented because we were running out of time.
-
-> Collision Detection – the snake detects that she can’t go out of the Arena she is in and also that she can’t collide with herself.
-
-> Food – a single spawn appears in a random position on the Arena (except the ones previously occupied by the snake's body) and disappears when the snake eats it. Another single spawn appears in a different random position immediately after being eaten.
-
-> Game Information – during gameplay, on top of the screen it will be possible to see the current size of the snake, which starts at 3 and will be increased by 1 everytime a spawn is eaten.
-
-> ScoreBoard – in the start mainMenu it is possible to see the highest Score (maximum of food eaten in one try) that a player was able to perform.
-
-> ENTER -> Select mainMenu option.
 
 # 1.
 ##  DESIGN
@@ -138,7 +143,7 @@ Current UML state with exception to the class food that isn't implemented yet.
 
 
 # TESTING
-Not yet implemented.  
+Not yet fully implemented.  
 (…)
 
 
