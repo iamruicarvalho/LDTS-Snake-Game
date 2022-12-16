@@ -12,7 +12,6 @@ import java.io.IOException;
 public class MainMenuControllerTest {
     private MainMenuController mainMenuController;
     private MainMenu mainMenu;
-
     private Game game;
 
 
