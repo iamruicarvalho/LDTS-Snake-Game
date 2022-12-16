@@ -41,11 +41,14 @@ public class SnakeController extends GameController {
         if (Lost) {
 
             URL resource = SnakeController.class.getResource("/Score/score.txt");
+            String file_URL = resource.getFile();
+            file_URL = file_URL.replace("/", "//");
+
             Integer score = getModel().getSnake().size();
-            File file = new File(resource.getFile());
+            File file = new File(file_URL);
             List<String> lines = new ArrayList<>();
 
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(resource.getFile()));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file_URL));
 
             for (String line; (line = bufferedReader.readLine()) != null;)
                 lines.add(line);

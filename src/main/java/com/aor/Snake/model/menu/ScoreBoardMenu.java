@@ -18,9 +18,12 @@ public class ScoreBoardMenu {
 
     public String gethightScore() throws IOException {
         URL resource = SnakeController.class.getResource("/Score/score.txt");
+        String file_URL = resource.getFile();
+        file_URL = file_URL.replace("/", "//");
+
         List<String> lines = new ArrayList<>();
 
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(resource.getFile()));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file_URL));
 
         for (String line; (line = bufferedReader.readLine()) != null;)
             lines.add(line);
