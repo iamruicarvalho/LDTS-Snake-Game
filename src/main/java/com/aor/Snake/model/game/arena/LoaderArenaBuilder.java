@@ -24,7 +24,7 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         this.level = level;
         URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
         String file_URL = resource.getFile();
-        file_URL = file_URL.replace("/", "//");
+        file_URL = file_URL.replaceAll("/", "//");
         BufferedReader br = new BufferedReader(new FileReader(file_URL));
 
         lines = readLines(br);
