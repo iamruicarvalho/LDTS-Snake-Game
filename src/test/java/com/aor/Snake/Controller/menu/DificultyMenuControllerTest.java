@@ -2,7 +2,9 @@ package com.aor.Snake.Controller.menu;
 
 import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
+import com.aor.Snake.model.game.arena.LoaderArenaBuilder;
 import com.aor.Snake.model.menu.DificultyMenu;
+import com.aor.Snake.states.GameState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -61,6 +63,8 @@ public class DificultyMenuControllerTest {
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedHard();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedBack();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedExit();
+        Mockito.verify(game, Mockito.times(1)).setFPS(10);
+        Mockito.verify(game, Mockito.times(0)).setState(null);
     }
     @Test
     void stepCaseSelectMedium() throws IOException, URISyntaxException, FontFormatException {
@@ -74,6 +78,8 @@ public class DificultyMenuControllerTest {
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedHard();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedBack();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedExit();
+        Mockito.verify(game, Mockito.times(1)).setFPS(15);
+        Mockito.verify(game, Mockito.times(0)).setState(null);
     }
     @Test
     void stepCaseSelectHard() throws IOException, URISyntaxException, FontFormatException {
@@ -87,6 +93,8 @@ public class DificultyMenuControllerTest {
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedHard();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedBack();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedExit();
+        Mockito.verify(game, Mockito.times(1)).setFPS(25);
+        Mockito.verify(game, Mockito.times(0)).setState(null);
     }
     @Test
     void stepCaseSelectBack() throws IOException, URISyntaxException, FontFormatException {
@@ -100,6 +108,7 @@ public class DificultyMenuControllerTest {
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedHard();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedBack();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedExit();
+        Mockito.verify(game, Mockito.times(0)).setState(null);
     }
     @Test
     void stepCaseSelectExit() throws IOException, URISyntaxException, FontFormatException {
@@ -113,5 +122,6 @@ public class DificultyMenuControllerTest {
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedHard();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedBack();
         Mockito.verify(dificultyMenuController.getModel(), Mockito.times(1)).isSelectedExit();
+        Mockito.verify(game, Mockito.times(1)).setState(null);
     }
 }

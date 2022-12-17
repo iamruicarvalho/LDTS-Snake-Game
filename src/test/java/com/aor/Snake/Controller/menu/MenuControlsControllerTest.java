@@ -49,6 +49,7 @@ public class MenuControlsControllerTest {
         Mockito.verify(menuControlsController.getModel(), Mockito.times(0)).nextEntry();
         Mockito.verify(menuControlsController.getModel(), Mockito.times(1)).isSelectedExit();
         Mockito.verify(menuControlsController.getModel(), Mockito.times(1)).isSelectedBack();
+        Mockito.verify(game, Mockito.times(1)).setState(null);
     }
     @Test
     void stepCaseSelectBack() throws IOException {
@@ -59,5 +60,6 @@ public class MenuControlsControllerTest {
         Mockito.verify(menuControlsController.getModel(), Mockito.times(0)).nextEntry();
         Mockito.verify(menuControlsController.getModel(), Mockito.times(1)).isSelectedExit();
         Mockito.verify(menuControlsController.getModel(), Mockito.times(1)).isSelectedBack();
+        Mockito.verify(game, Mockito.times(0)).setState(null);
     }
 }

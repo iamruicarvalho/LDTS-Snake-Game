@@ -56,6 +56,7 @@ public class MainMenuControllerTest {
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedControls();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedScoreBoard();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedStart();
+        Mockito.verify(game, Mockito.times(1)).setState(null);
 
     }
     @Test
@@ -69,6 +70,7 @@ public class MainMenuControllerTest {
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedControls();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedScoreBoard();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedStart();
+        Mockito.verify(game, Mockito.times(0)).setState(null);
 
     }
     @Test
@@ -82,7 +84,7 @@ public class MainMenuControllerTest {
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedControls();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedScoreBoard();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedStart();
-
+        Mockito.verify(game, Mockito.times(0)).setState(null);
     }
     @Test
     void stepCaseSelectStart() throws IOException {
@@ -95,6 +97,7 @@ public class MainMenuControllerTest {
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedControls();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedScoreBoard();
         Mockito.verify(mainMenuController.getModel(), Mockito.times(1)).isSelectedStart();
+        Mockito.verify(game, Mockito.times(0)).setState(null);
 
     }
 }
