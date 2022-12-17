@@ -36,6 +36,10 @@ public class Game {
         this.FPS = FPS;
     }
 
+    public int getFPS() {
+        return FPS;
+    }
+
     private void start() throws IOException, URISyntaxException, FontFormatException {
 
         while (this.state != null) {

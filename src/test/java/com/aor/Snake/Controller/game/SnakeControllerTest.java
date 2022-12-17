@@ -41,6 +41,7 @@ public class SnakeControllerTest {
         snakeController = new SnakeController(arena);
         game = Mockito.mock(Game.class);
 
+
     }
 
     @Test

@@ -42,8 +42,6 @@ public class SnakeController extends GameController {
 
             URL resource = SnakeController.class.getResource("/Score/score.txt");
             String file_URL = resource.getFile();
-            file_URL = file_URL.replaceAll("/", "//");
-
             Integer score = getModel().getSnake().size();
             File file = new File(file_URL);
             List<String> lines = new ArrayList<>();
