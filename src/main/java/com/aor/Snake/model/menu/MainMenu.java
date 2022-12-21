@@ -49,4 +49,6 @@ public class MainMenu {
     public int getNumberEntries() {
         return this.entries.size();
     }
+
+    public int getCurrentEntry(){ return this.currentEntry; }
 }

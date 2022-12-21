@@ -22,9 +22,8 @@ public class LoaderArenaBuilder extends ArenaBuilder {
 
     public LoaderArenaBuilder(int level) throws IOException {
         this.level = level;
-        //URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
-        //String file_URL = resource.getFile();
-        String file_URL = "C:\\Users\\Guilherme Ribeiro\\Desktop\\FEUP\\LDTS\\Snake\\build\\resources\\main\\levels\\level1.lvl";
+        URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
+        String file_URL = resource.getFile();
         file_URL = file_URL.replaceAll("/", "//");
         BufferedReader br = new BufferedReader(new FileReader(file_URL));
 
