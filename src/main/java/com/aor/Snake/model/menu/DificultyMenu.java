@@ -3,7 +3,7 @@ package com.aor.Snake.model.menu;
 import java.util.Arrays;
 import java.util.List;
 
-public class DificultyMenu {
+public class    DificultyMenu {
     private final List<String> entries;
     private int currentEntry = 0;
 
@@ -54,5 +54,9 @@ public class DificultyMenu {
 
     public int getNumberEntries() {
         return this.entries.size();
+    }
+
+    public int getCurrentEntry(){
+        return this.currentEntry;
     }
 }
