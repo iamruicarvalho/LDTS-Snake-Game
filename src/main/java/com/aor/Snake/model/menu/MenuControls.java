@@ -42,4 +42,6 @@ public class MenuControls {
     public int getNumberEntries() {
         return this.entries.size();
     }
+
+    public int getCurrentEntry(){ return this.currentEntry;}
 }
