@@ -40,9 +40,8 @@ public class SnakeController extends GameController {
         if (action == GUI.ACTION.QUIT) game.setState(null);
         if (Lost) {
 
-            //URL resource = SnakeController.class.getResource("/Score/score.txt");
-            //String file_URL = resource.getFile();
-            String file_URL = "C:\\Users\\Guilherme Ribeiro\\Desktop\\FEUP\\LDTS\\Snake\\build\\resources\\main\\Score\\score.txt";
+            URL resource = SnakeController.class.getResource("/Score/score.txt");
+            String file_URL = resource.getFile();
             Integer score = getModel().getSnake().size();
             File file = new File(file_URL);
             List<String> lines = new ArrayList<>();
