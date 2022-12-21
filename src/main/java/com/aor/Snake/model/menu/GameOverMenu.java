@@ -53,4 +53,6 @@ public class GameOverMenu {
         return this.entries.size();
     }
 
+    public int getCurrentEntry(){ return this.currentEntry;}
+
 }
