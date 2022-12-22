@@ -2,6 +2,7 @@ package com.aor.Snake.viewer;
 
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
+import com.aor.Snake.model.game.Fruit.FruitFactory;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.Fruit.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
@@ -31,8 +32,8 @@ public class ArenaViewerTest {
         gui = Mockito.mock(GUI.class);
         viewer = new GameViewer(arena);
         snakeViewer = new SnakeViewer();
-        apple = new Apple(10, 10);
-        arena.setApple(apple);
+        apple = (Apple) FruitFactory.createFruit("Apple", new Position(10, 10));
+        arena.setFruit(apple);
 
         arena.setWalls(Arrays.asList(new Wall(1,2), new Wall(2,3), new Wall(3,4)));
         arena.setSnake( new ArrayList<>());

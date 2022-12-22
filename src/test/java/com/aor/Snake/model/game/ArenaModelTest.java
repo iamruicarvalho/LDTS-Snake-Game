@@ -3,6 +3,7 @@ package com.aor.Snake.model.game;
 import com.aor.Snake.Game;
 import com.aor.Snake.Controller.game.SnakeController;
 import com.aor.Snake.model.Position;
+import com.aor.Snake.model.game.Fruit.FruitFactory;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.Fruit.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
@@ -27,8 +28,8 @@ public class ArenaModelTest {
     void setup(){
         arena = new Arena(29,29);
 
-        apple = new Apple(9, 10);
-        arena.setApple(apple);
+        apple = (Apple) FruitFactory.createFruit("Apple", new Position(9, 10));
+        arena.setFruit(apple);
 
         List<SnakeBody> snake = new ArrayList<>();
         snake.add(new SnakeBody(10, 10));
@@ -46,7 +47,7 @@ public class ArenaModelTest {
 
     @Test
     void isAppleWorking(){
-        assertEquals(true, arena.isApple(arena.getApple().getPosition()));
+        assertEquals(true, arena.isFruit(arena.getFruit().getPosition()));
     }
 
     @Test

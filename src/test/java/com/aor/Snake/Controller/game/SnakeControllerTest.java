@@ -3,6 +3,7 @@ package com.aor.Snake.Controller.game;
 import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
+import com.aor.Snake.model.game.Fruit.FruitFactory;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.Fruit.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
@@ -33,8 +34,8 @@ public class SnakeControllerTest {
     void setup() {
         arena = new Arena(29, 29);
 
-        apple = new Apple(9, 10);
-        arena.setApple(apple);
+        apple = (Apple) FruitFactory.createFruit("Apple", new Position(9, 10));
+        arena.setFruit(apple);
 
         arena.setWalls(Arrays.asList());
 
@@ -140,7 +141,7 @@ public class SnakeControllerTest {
         snakeController.DirectionLeft();
         snakeController.step(game, GUI.ACTION.NONE, 1000);
 
-        assertNotEquals(true, arena.isApple(apple.getPosition()));
-        assertNotEquals(true, arena.isApple(arena.getSnake().get(0).getPosition()));
+        assertNotEquals(true, arena.isFruit(apple.getPosition()));
+        assertNotEquals(true, arena.isFruit(arena.getSnake().get(0).getPosition()));
     }
 }
