@@ -20,13 +20,9 @@ public class DificultyMenuController extends Controller<DificultyMenu> {
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException, URISyntaxException, FontFormatException {
         switch (action) {
-            case UP:
-                getModel().previousEntry();
-                break;
-            case DOWN:
-                getModel().nextEntry();
-                break;
-            case SELECT:
+            case UP -> getModel().previousEntry();
+            case DOWN -> getModel().nextEntry();
+            case SELECT -> {
                 if (getModel().isSelectedEasy()) {
                     game.setFPS(10);
                     game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
@@ -41,6 +37,7 @@ public class DificultyMenuController extends Controller<DificultyMenu> {
                 }
                 if (getModel().isSelectedBack()) game.setState(new MainMenuState(new MainMenu()));
                 if (getModel().isSelectedExit()) game.setState(null);
+            }
         }
     }
 }

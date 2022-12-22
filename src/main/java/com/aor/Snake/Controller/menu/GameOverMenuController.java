@@ -21,16 +21,14 @@ public class GameOverMenuController extends Controller<GameOverMenu> {
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException, URISyntaxException, FontFormatException {
         switch (action) {
-            case UP:
-                getModel().previousEntry();
-                break;
-            case DOWN:
-                getModel().nextEntry();
-                break;
-            case SELECT:
+            case UP -> getModel().previousEntry();
+            case DOWN -> getModel().nextEntry();
+            case SELECT -> {
                 if (getModel().isSelectedExit()) game.setState(null);
                 if (getModel().isSelectedMenu()) game.setState(new MainMenuState(new MainMenu()));
-                if (getModel().isSelectedRestart()) game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
+                if (getModel().isSelectedRestart())
+                    game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
+            }
         }
     }
 }

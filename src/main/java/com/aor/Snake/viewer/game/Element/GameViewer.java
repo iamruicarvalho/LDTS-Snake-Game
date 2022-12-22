@@ -12,9 +12,6 @@ import com.aor.Snake.viewer.Viewer;
 import com.aor.Snake.viewer.game.Fruit.AppleViewer;
 import com.aor.Snake.viewer.game.Fruit.BananaViewer;
 import com.aor.Snake.viewer.game.Fruit.CherryViewer;
-import com.aor.Snake.viewer.game.Fruit.FruitViewer;
-
-import java.awt.desktop.AppForegroundListener;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

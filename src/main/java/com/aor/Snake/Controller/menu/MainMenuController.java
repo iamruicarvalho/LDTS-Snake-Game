@@ -21,17 +21,14 @@ public class MainMenuController extends Controller<MainMenu> {
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         switch (action) {
-            case UP:
-                getModel().previousEntry();
-                break;
-            case DOWN:
-                getModel().nextEntry();
-                break;
-            case SELECT:
+            case UP -> getModel().previousEntry();
+            case DOWN -> getModel().nextEntry();
+            case SELECT -> {
                 if (getModel().isSelectedExit()) game.setState(null);
                 if (getModel().isSelectedControls()) game.setState(new MenuControlsState(new MenuControls()));
                 if (getModel().isSelectedScoreBoard()) game.setState(new ScoreBoardMenuState(new ScoreBoardMenu()));
                 if (getModel().isSelectedStart()) game.setState(new DificultyMenuState(new DificultyMenu()));
+            }
         }
     }
 }

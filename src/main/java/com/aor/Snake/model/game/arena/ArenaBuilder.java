@@ -1,9 +1,7 @@
 package com.aor.Snake.model.game.arena;
 
-import com.aor.Snake.model.Position;
-import com.aor.Snake.model.game.Fruit.Apple;
+
 import com.aor.Snake.model.game.Fruit.Fruit;
-import com.aor.Snake.model.game.Fruit.FruitFactory;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 

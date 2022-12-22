@@ -19,7 +19,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class LanternaGUI implements GUI {
-    private Screen screen;
+    private final Screen screen;
     public LanternaGUI(Screen screen) {
         this.screen = screen;
     }
@@ -51,13 +51,13 @@ public class LanternaGUI implements GUI {
     private AWTTerminalFontConfiguration loadFont() throws URISyntaxException, FontFormatException, IOException {
 
         URL resource = getClass().getClassLoader().getResource("fonts/Square-Regularcereja.ttf");
+        assert resource != null;
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
         Font loadedFont = font.deriveFont(Font.PLAIN, 25);
-        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
-        return fontConfig;
+        return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
 
     public ACTION getNextAction() throws IOException {

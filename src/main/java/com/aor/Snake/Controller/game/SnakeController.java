@@ -11,7 +11,6 @@ import com.aor.Snake.states.GameOverMenuState;
 import java.awt.*;
 import java.io.*;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 import java.io.IOException;
 
@@ -39,28 +38,31 @@ public class SnakeController extends GameController {
         if (action == GUI.ACTION.LEFT) DirectionLeft();
         if (action == GUI.ACTION.QUIT) game.setState(null);
         if (Lost) {
+            File file = new File("scoreBoard/Scoreboard.txt");
+            String filePath = file.getAbsolutePath();
+            int score = getModel().getScore();
 
-            URL resource = SnakeController.class.getResource("/Score/score.txt");
-            String file_URL = resource.getFile();
-            Integer score = getModel().getSnake().size();
-            File file = new File(file_URL);
             List<String> lines = new ArrayList<>();
-
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file_URL));
-
-            for (String line; (line = bufferedReader.readLine()) != null;)
-                lines.add(line);
-
-            if (lines.isEmpty() || score > Integer.valueOf(lines.get(0))) {
-                FileWriter fileWriter = new FileWriter(file, false);
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                bufferedWriter.write(score.toString() + '\n');
-                bufferedWriter.close();
+            try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+                for (String line; (line = bufferedReader.readLine()) != null;) {
+                    lines.add(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
+            boolean newHighScore = lines.isEmpty() || score > Integer.parseInt(lines.get(0));
+            if (newHighScore) {
+                try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, false))) {
+                    bufferedWriter.write(Integer.toString(score) + '\n');
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
             GameOverMenu gameOverMenu = new GameOverMenu();
             gameOverMenu.setScore(getModel().getScore());
             game.setState(new GameOverMenuState(gameOverMenu));
-
         }
 
     }
@@ -81,39 +83,37 @@ public class SnakeController extends GameController {
         if (!Direction.equals("Down")) Direction = "Up";
     }
 
-    public void moveLeft() throws IOException, URISyntaxException, FontFormatException {
+    public void moveLeft() {
         //New Head
         SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX() - 1, getModel().getSnake().get(0).getPosition().getY());
         moveBody(head);
     }
 
-    public void moveRight() throws IOException, URISyntaxException, FontFormatException {
+    public void moveRight() {
         //New Head
         SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX() + 1, getModel().getSnake().get(0).getPosition().getY());
         moveBody(head);
     }
 
-    public void moveUp() throws IOException, URISyntaxException, FontFormatException {
+    public void moveUp() {
         //New Head
         SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX(), getModel().getSnake().get(0).getPosition().getY() - 1);
         moveBody(head);
     }
 
-    public void moveDown() throws IOException, URISyntaxException, FontFormatException {
+    public void moveDown() {
         //New Head
         SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX(), getModel().getSnake().get(0).getPosition().getY() + 1);
         moveBody(head);
     }
 
-    private void moveBody(SnakeBody head) throws IOException, URISyntaxException, FontFormatException {
+    private void moveBody(SnakeBody head) {
         List<SnakeBody> new_snake = new ArrayList<>();
 
         if (getModel().isFruit(head.getPosition())) {
             new_snake.add(head);
             //New Body
-            for (int i = 0; i < getModel().getSnake().size(); i++) {
-                new_snake.add(getModel().getSnake().get(i));
-            }
+            new_snake.addAll(getModel().getSnake());
             getModel().setSnake(new_snake);
         }
         else if (getModel().isEmpty(head.getPosition())) {

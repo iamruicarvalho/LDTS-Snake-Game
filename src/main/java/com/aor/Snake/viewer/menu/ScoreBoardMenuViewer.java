@@ -16,7 +16,7 @@ public class ScoreBoardMenuViewer extends Viewer<ScoreBoardMenu> {
     @Override
     protected void drawElements(GUI gui) throws IOException {
         gui.drawText(new Position(7, 10), "@ SCOREBOARD @", "#000CFF", "#000000");
-        gui.drawText(new Position(6, 12), "BEST SCORE: " + getModel().gethightScore(), "#FFD700", "#000000");
+        gui.drawText(new Position(6, 12), "BEST SCORE: " + getModel().getHighScore(), "#FFD700", "#000000");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(

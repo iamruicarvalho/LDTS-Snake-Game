@@ -16,17 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoaderArenaBuilder extends ArenaBuilder {
-    private final int level;
     private final List<String> lines;
-
-    private int max = 28;
-    private int min = 1;
-
     public LoaderArenaBuilder(int level) throws IOException {
-        this.level = level;
         URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
+        assert resource != null;
         String file_URL = resource.getFile();
-        file_URL = file_URL.replaceAll("/", "//");
+        file_URL = file_URL.replaceAll("/", "\\\\");
         BufferedReader br = new BufferedReader(new FileReader(file_URL));
 
         lines = readLines(br);

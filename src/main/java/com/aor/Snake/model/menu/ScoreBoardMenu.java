@@ -1,9 +1,6 @@
 package com.aor.Snake.model.menu;
 
-import com.aor.Snake.Controller.game.SnakeController;
-
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,22 +13,21 @@ public class ScoreBoardMenu {
         this.entries = Arrays.asList("BACK", "EXIT");
     }
 
-    public String gethightScore() throws IOException {
-        URL resource = SnakeController.class.getResource("/Score/score.txt");
-        String file_URL = resource.getFile();
+    public String getHighScore() throws IOException {
+        File file = new File("scoreBoard/Scoreboard.txt");
+        String filePath = file.getAbsolutePath();
+        filePath = filePath.replaceAll("/", "\\\\");
 
         List<String> lines = new ArrayList<>();
-
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file_URL));
-
-        for (String line; (line = bufferedReader.readLine()) != null;)
-            lines.add(line);
-
-        if (!lines.isEmpty()) {
-            return lines.get(0);
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+            for (String line; (line = bufferedReader.readLine()) != null;) {
+                lines.add(line);
+            }
         }
-        return "";
+
+        return lines.isEmpty() ? "" : lines.get(0);
     }
+
 
     public void nextEntry() {
         currentEntry++;

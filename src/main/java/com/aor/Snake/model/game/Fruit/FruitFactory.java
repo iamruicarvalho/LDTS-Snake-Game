@@ -4,16 +4,12 @@ import com.aor.Snake.model.Position;
 
 public class FruitFactory {
     public static Fruit createFruit(String fruitType, Position position) {
-        if (fruitType.equals("Apple")) {
-            return new Apple(position);
+        return switch (fruitType) {
+            case "Apple" -> new Apple(position);
+            case "Banana" -> new Banana(position);
+            case "Cherry" -> new Cherry(position);
+            default -> null;
+        };
 
-        } else if (fruitType.equals("Banana")) {
-            return new Banana(position);
-
-        } else if (fruitType.equals("Cherry")) {
-            return new Cherry(position);
-        }
-
-        return null;
     }
 }

@@ -26,10 +26,6 @@ public class Arena {
         return width;
     }
 
-    public int getHeight() {
-        return height;
-    }
-
     public List<Wall> getWalls() {
         return walls;
     }
@@ -53,8 +49,8 @@ public class Arena {
     public void IncrementScore(int increment) {Score += increment;}
     public void MultiplyScore(double multiplier) {
         double aux = Score * multiplier;
-        if (aux >= Score) {Score = (int)aux;}
-        else {IncrementScore(3);}
+        if (aux > Score) {Score = (int) Math.ceil(aux);}
+        else {IncrementScore(5);}
     }
 
 
@@ -78,15 +74,14 @@ public class Arena {
             else if (fruit instanceof Banana) {IncrementScore(2);}
             else if (fruit instanceof Cherry) {MultiplyScore(1.5);}
             int aux_score = Score;
-            System.out.println(Score);
 
             while (new_fruit == null || !isEmpty(new_fruit.getPosition()) || fruit.getPosition() == new_fruit.getPosition()) {
-                int Score = aux_score;
+                Score = aux_score;
                 int randPosX = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 int randPosY = (int) Math.floor(Math.random() * (max - min + 1) + min);
 
                 Position pos = new Position(randPosX, randPosY);
-                String randomFruit = "";
+                String randomFruit;
                 int randFruit = (int) Math.floor(Math.random() * (100  + 1));
                 if (randFruit <= 25) {randomFruit = "Banana";}
                 else if (randFruit >= 95) {randomFruit = "Cherry";}
