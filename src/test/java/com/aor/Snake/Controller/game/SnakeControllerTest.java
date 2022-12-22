@@ -4,7 +4,7 @@ import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
 import com.aor.Snake.model.game.arena.Arena;
-import com.aor.Snake.model.game.elements.Apple;
+import com.aor.Snake.model.game.Fruit.Apple;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 import org.junit.jupiter.api.BeforeEach;

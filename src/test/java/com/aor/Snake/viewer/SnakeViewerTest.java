@@ -2,7 +2,7 @@ package com.aor.Snake.viewer;
 
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.elements.SnakeBody;
-import com.aor.Snake.viewer.game.SnakeViewer;
+import com.aor.Snake.viewer.game.Element.SnakeViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -13,6 +13,8 @@ public interface GUI {
 
     void drawApple(Position position);
 
+    void drawBanana(Position position);
+
     void drawText(Position position, String text, String color, String backcolor);
     void clear();
 
@@ -21,5 +23,6 @@ public interface GUI {
     void close() throws IOException;
 
     void changeBackgroundColor(String color, String backcolor) throws IOException;
+
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
 }

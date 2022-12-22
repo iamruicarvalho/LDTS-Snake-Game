@@ -21,5 +21,6 @@ public class DificultyMenuViewer extends Viewer<DificultyMenu> {
                     getModel().getEntry(i),
                     getModel().isSelected(i) ? "#D97F02" : "#FFFFFF", "#000000");
     }
+
 }
 

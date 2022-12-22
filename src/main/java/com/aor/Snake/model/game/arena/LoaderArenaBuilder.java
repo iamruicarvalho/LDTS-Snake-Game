@@ -2,7 +2,9 @@ package com.aor.Snake.model.game.arena;
 
 
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.game.elements.Apple;
+import com.aor.Snake.model.game.Fruit.Apple;
+import com.aor.Snake.model.game.Fruit.Fruit;
+import com.aor.Snake.model.game.Fruit.FruitFactory;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 
@@ -77,13 +79,15 @@ public class LoaderArenaBuilder extends ArenaBuilder {
     }
 
     @Override
-    protected Apple createApple() {
-        Apple apple = new Apple(0, 0);
+    protected Fruit createFruit() {
+        Fruit fruit = new Apple(new Position(0,0));
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == '$') apple.setPosition(new Position(x, y));
+                if (line.charAt(x) == '$'){
+                    fruit = FruitFactory.createFruit("Apple", new Position(x, y));
+                }
         }
-        return apple;
+        return fruit;
     }
 }

@@ -1,6 +1,9 @@
 package com.aor.Snake.model.game.arena;
 
-import com.aor.Snake.model.game.elements.Apple;
+import com.aor.Snake.model.Position;
+import com.aor.Snake.model.game.Fruit.Apple;
+import com.aor.Snake.model.game.Fruit.Fruit;
+import com.aor.Snake.model.game.Fruit.FruitFactory;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 
@@ -11,7 +14,7 @@ public abstract class ArenaBuilder {
         Arena arena = new Arena(getWidth(), getHeight());
         arena.setSnake(createSnake());
         arena.setWalls(createWalls());
-        arena.setApple(createApple());
+        arena.setFruit(createFruit());
 
         return arena;
     }
@@ -20,7 +23,7 @@ public abstract class ArenaBuilder {
     protected abstract int getHeight();
     protected abstract List<Wall> createWalls();
     protected abstract List<SnakeBody> createSnake();
-    protected abstract Apple createApple();
+    protected abstract Fruit createFruit();
 
 
 }

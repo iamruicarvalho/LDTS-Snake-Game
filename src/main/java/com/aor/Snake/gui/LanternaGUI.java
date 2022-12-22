@@ -50,7 +50,7 @@ public class LanternaGUI implements GUI {
 
     private AWTTerminalFontConfiguration loadFont() throws URISyntaxException, FontFormatException, IOException {
 
-        URL resource = getClass().getClassLoader().getResource("fonts/square_edit.ttf");
+        URL resource = getClass().getClassLoader().getResource("fonts/banana2.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -89,6 +89,11 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawApple(Position position) {
         drawCharacter(position.getX(), position.getY(), '$', "#FF0000", "#000000");
+    }
+
+    @Override
+    public void drawBanana(Position position) {
+        drawCharacter(position.getX(), position.getY(), ',', "#FFFB01", "#000000");
     }
 
     @Override
