@@ -1,4 +1,4 @@
-package com.aor.Snake.viewer;
+package com.aor.Snake.viewer.game;
 
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.elements.SnakeBody;
