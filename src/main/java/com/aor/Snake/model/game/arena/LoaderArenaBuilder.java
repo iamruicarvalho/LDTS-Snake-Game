@@ -9,20 +9,26 @@ import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LoaderArenaBuilder extends ArenaBuilder {
     private final List<String> lines;
-    public LoaderArenaBuilder(int level) throws IOException {
+    public LoaderArenaBuilder(int level) throws IOException, URISyntaxException {
         URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
         assert resource != null;
-        String file_URL = resource.getFile();
-        file_URL = file_URL.replaceAll("/", "\\\\");
-        BufferedReader br = new BufferedReader(new FileReader(file_URL));
+        File auxiliary_file = new File(resource.toURI());
+        String path = auxiliary_file.getAbsolutePath();
+        BufferedReader br = new BufferedReader(new FileReader(path));
 
         lines = readLines(br);
     }
