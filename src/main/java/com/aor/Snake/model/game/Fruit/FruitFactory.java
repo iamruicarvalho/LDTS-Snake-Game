@@ -9,7 +9,11 @@ public class FruitFactory {
 
         } else if (fruitType.equals("Banana")) {
             return new Banana(position);
+
+        } else if (fruitType.equals("Cherry")) {
+            return new Cherry(position);
         }
+
         return null;
     }
 }

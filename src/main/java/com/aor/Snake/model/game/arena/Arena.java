@@ -1,10 +1,7 @@
 package com.aor.Snake.model.game.arena;
 
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.game.Fruit.Apple;
-import com.aor.Snake.model.game.Fruit.Banana;
-import com.aor.Snake.model.game.Fruit.Fruit;
-import com.aor.Snake.model.game.Fruit.FruitFactory;
+import com.aor.Snake.model.game.Fruit.*;
 import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 
@@ -16,6 +13,8 @@ public class Arena {
 
     private List<SnakeBody> Snake;
     private List<Wall> walls;
+
+    private Integer Score = 0;
     private Fruit fruit;
 
     public Arena(int width, int height) {
@@ -51,6 +50,16 @@ public class Arena {
         return this.fruit;
     }
 
+    public void IncrementScore(int increment) {Score += increment;}
+    public void MultiplyScore(double multiplier) {
+        double aux = Score * multiplier;
+        if (aux >= Score) {Score = (int)aux;}
+        else {IncrementScore(3);}
+    }
+
+
+    public int getScore() {return Score;}
+
     public boolean isEmpty(Position position) {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
@@ -65,15 +74,23 @@ public class Arena {
         if (position.equals(fruit.getPosition())) {
             int max = 27;
             int min = 2;
+            if (fruit instanceof Apple) {IncrementScore(1);}
+            else if (fruit instanceof Banana) {IncrementScore(2);}
+            else if (fruit instanceof Cherry) {MultiplyScore(1.5);}
+            int aux_score = Score;
+            System.out.println(Score);
+
             while (new_fruit == null || !isEmpty(new_fruit.getPosition()) || fruit.getPosition() == new_fruit.getPosition()) {
+                int Score = aux_score;
                 int randPosX = (int) Math.floor(Math.random() * (max - min + 1) + min);
                 int randPosY = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                int randFruit = (int) Math.floor(Math.random() * (2 - 1 + 1) + 1);
 
                 Position pos = new Position(randPosX, randPosY);
                 String randomFruit = "";
-                if (randFruit == 1) {randomFruit = "Apple";}
-                else if (randFruit == 2) {randomFruit = "Banana";}
+                int randFruit = (int) Math.floor(Math.random() * (100  + 1));
+                if (randFruit <= 25) {randomFruit = "Banana";}
+                else if (randFruit >= 95) {randomFruit = "Cherry";}
+                else {randomFruit = "Apple";}
                 new_fruit = FruitFactory.createFruit(randomFruit, pos);
             }
             setFruit(new_fruit);

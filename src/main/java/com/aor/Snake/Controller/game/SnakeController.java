@@ -58,7 +58,7 @@ public class SnakeController extends GameController {
                 bufferedWriter.close();
             }
             GameOverMenu gameOverMenu = new GameOverMenu();
-            gameOverMenu.setScore(score);
+            gameOverMenu.setScore(getModel().getScore());
             game.setState(new GameOverMenuState(gameOverMenu));
 
         }
