@@ -19,14 +19,12 @@ public class DificultyMenuViewerTest {
     private DificultyMenuViewer dificultyMenuViewer;
     private DificultyMenu model;
     private LanternaGUI gui;
-    private TextGraphics graphics;
 
     @BeforeEach
     void setUp() {
         model = new DificultyMenu();
         dificultyMenuViewer = new DificultyMenuViewer(model);
         gui = Mockito.mock(LanternaGUI.class);
-        graphics = Mockito.mock(TextGraphics.class);
     }
 
     @Test
