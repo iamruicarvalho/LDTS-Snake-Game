@@ -1,6 +1,7 @@
 package com.aor.Snake.Controller.game;
 
 import com.aor.Snake.Game;
+import com.aor.Snake.ScoreBoard.SingletonScoreboard;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.SnakeBody;
@@ -9,7 +10,6 @@ import com.aor.Snake.model.menu.GameOverMenu;
 import com.aor.Snake.states.GameOverMenuState;
 
 import java.awt.*;
-import java.io.*;
 import java.net.URISyntaxException;
 
 import java.io.IOException;
@@ -37,31 +37,14 @@ public class SnakeController extends GameController {
         if (action == GUI.ACTION.DOWN) DirectionDown();
         if (action == GUI.ACTION.LEFT) DirectionLeft();
         if (action == GUI.ACTION.QUIT) game.setState(null);
+
         if (Lost) {
-            File file = new File("scoreBoard/Scoreboard.txt");
-            String filePath = file.getAbsolutePath();
-            int score = getModel().getScore();
-
-            List<String> lines = new ArrayList<>();
-            try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
-                for (String line; (line = bufferedReader.readLine()) != null;) {
-                    lines.add(line);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            boolean newHighScore = lines.isEmpty() || score > Integer.parseInt(lines.get(0));
-            if (newHighScore) {
-                try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, false))) {
-                    bufferedWriter.write(Integer.toString(score) + '\n');
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            SingletonScoreboard instance = SingletonScoreboard.getInstance();
+            int score = getModel().getScore();  //Score obtained during gameplay
+            instance.UpdateHighScore(score);    //Updates if better than the one before
 
             GameOverMenu gameOverMenu = new GameOverMenu();
-            gameOverMenu.setScore(getModel().getScore());
+            instance.setLastScore(score);
             game.setState(new GameOverMenuState(gameOverMenu));
         }
 
@@ -85,25 +68,29 @@ public class SnakeController extends GameController {
 
     public void moveLeft() {
         //New Head
-        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX() - 1, getModel().getSnake().get(0).getPosition().getY());
+        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX() - 1,
+                getModel().getSnake().get(0).getPosition().getY());
         moveBody(head);
     }
 
     public void moveRight() {
         //New Head
-        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX() + 1, getModel().getSnake().get(0).getPosition().getY());
+        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX() + 1,
+                getModel().getSnake().get(0).getPosition().getY());
         moveBody(head);
     }
 
     public void moveUp() {
         //New Head
-        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX(), getModel().getSnake().get(0).getPosition().getY() - 1);
+        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX(),
+                getModel().getSnake().get(0).getPosition().getY() - 1);
         moveBody(head);
     }
 
     public void moveDown() {
         //New Head
-        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX(), getModel().getSnake().get(0).getPosition().getY() + 1);
+        SnakeBody head = new SnakeBody(getModel().getSnake().get(0).getPosition().getX(),
+                getModel().getSnake().get(0).getPosition().getY() + 1);
         moveBody(head);
     }
 
@@ -112,13 +99,11 @@ public class SnakeController extends GameController {
 
         if (getModel().isFruit(head.getPosition())) {
             new_snake.add(head);
-            //New Body
             new_snake.addAll(getModel().getSnake());
             getModel().setSnake(new_snake);
         }
         else if (getModel().isEmpty(head.getPosition())) {
             new_snake.add(head);
-            //New Body
             for (int i = 0; i < getModel().getSnake().size() - 1; i++) {
                 new_snake.add(getModel().getSnake().get(i));
             }
