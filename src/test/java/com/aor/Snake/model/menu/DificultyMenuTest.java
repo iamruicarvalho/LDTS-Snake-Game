@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class DificultyMenuTest {
 
@@ -37,12 +38,16 @@ public class DificultyMenuTest {
         assertEquals(0, dificultyMenu.getCurrentEntry());
         dificultyMenu.previousEntry();
         assertEquals(dificultyMenu.getNumberEntries() - 1, dificultyMenu.getCurrentEntry());
+        assertEquals(4, dificultyMenu.getCurrentEntry());
         dificultyMenu.previousEntry();
         assertEquals(3, dificultyMenu.getCurrentEntry());
+        dificultyMenu.previousEntry();
+        assertEquals(2, dificultyMenu.getCurrentEntry());
     }
 
     @Test
     void isSelectedETCTest(){
+        assertEquals(true, dificultyMenu.isSelectedEasy());
         assertEquals(dificultyMenu.isSelected(0), dificultyMenu.isSelectedEasy());
         assertEquals(dificultyMenu.isSelected(1), dificultyMenu.isSelectedMedium());
         assertEquals(dificultyMenu.isSelected(2), dificultyMenu.isSelectedHard());
@@ -54,6 +59,7 @@ public class DificultyMenuTest {
     void entriesTest(){
         assertEquals(true, dificultyMenu.isSelectedEasy());
         dificultyMenu.nextEntry();
+        assertNotEquals(true, dificultyMenu.isSelectedEasy());
         assertEquals(true, dificultyMenu.isSelectedMedium());
         dificultyMenu.nextEntry();
         assertEquals(true, dificultyMenu.isSelectedHard());
