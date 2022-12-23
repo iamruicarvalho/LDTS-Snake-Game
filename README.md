@@ -133,6 +133,7 @@ We used the FACTORY PATTERN, which is a creation design pattern that provides an
 
 ### Consequences
 • It is now much easier to add different objects or elements to the game. For example, if we want to add new food, using the same characteristics as the previous ones, the process will be simpler.
+• Open/Closed Principle. We can introduce new elements (fruits) without changing the existing element classes
 
 
 # DATA CLASS
@@ -141,6 +142,40 @@ We used the FACTORY PATTERN, which is a creation design pattern that provides an
 ![UML](/Images_Source/UML.png "UML")  
 Current UML state with exception to the class food that isn't implemented yet.
 temos de rever o UML e colocar tudo interligado entre si. o stor queixou se disso na apresentação.
+
+
+# Refactoring suggestions and Code Smells
+
+## 1.
+### Long Method
+* During the code review, we noticed that some functions in our codebase were quite large. Upon closer inspection using the liveRef tool, we discovered that these large functions were a code smell, indicating a lack of modularity in the code.  
+As a result, we decided to refactor these large functions by dividing them into smaller and more focused ones, having each one of them a single responsibility or task. The refactoring improved the overall readability and maintainability of the code.  
+For example, we noticed that the function moveBody() in the class SnakeController() had the responsibility of checking if the snake could move to a specific position and verifying if that position was occupied by an apple, a snake body, or a wall.
+We decided to create a new function called checkCollision(), which was solely responsible for checking if the snake was moving to an empty spot.
+If not, the function would change the Lost flag to true.  
+
+* Additionally, we noticed that the function isFruit() in the Arena class had the same code smell. We refactored this function by dividing it into a new function called moveFruit(), which was responsible for generating a random fruit position and setting it as the fruit inside the arena.  
+This helped to improve the modularity and readability of the code.
+
+* We also discovered that the highscore was being set by functions that shouldn't have had that responsibility. To solve this issue, we implemented the Singleton Design Pattern to manage the highscore. This not only improved the overall readability of the code, but it also helped to remove unnecessary private fields from classes that shouldn't have had them, such as the score that was inside the GameOverMenu() class.  
+Previously, the only way to access this score was through the GameOverMenuViewer() class, which was responsible for displaying the score obtained.
+
+## 2.
+### Dead Code
+* We also noticed the presence of some dead code in our codebase. One example of dead code we identified was the number of getter methods that were no longer being used. While we could have simply removed this dead code, we decided to leave it in place for the time being. This was because we wanted to maintain the ability to easily introduce new tests in the future, and we believed that the presence of these getter methods could be useful for this purpose.
+
+## 3.
+### Duplicated Code
+* Another code smell we noticed was the presence of repeated code in multiple parts of the codebase.  
+While it is generally considered a code smell to have code that is unnecessarily duplicated, in this case we decided to leave the repeated code in place. One reason for this decision was that the repeated code was used to implement the Model-View-Controller (MVC) design pattern.  
+Besides that, by keeping the repeated code, we were able to demonstrate more clearly the separation of these components and improve the overall readability and understanding of the MVC pattern in our codebase.
+
+## Conclusion
+Overall, our goal during the code review and refactoring process was to adhere as closely as possible to the SOLID principles of object-oriented design.   
+While we believe that we made significant progress in applying these principles and improving the overall design of our codebase, we recognize that there may still be some areas for further improvement. In particular, the classes SnakeController and Arena were identified as having somewhat complex functionality and potentially being in violation of the Single Responsibility Principle.  
+
+Ultimately, our goal is to create a codebase that is both easy to understand and maintain, and we believe that adhering to the SOLID principles is the key to achieving this goal.
+
 
 
 
