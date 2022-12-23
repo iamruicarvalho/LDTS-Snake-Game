@@ -25,11 +25,16 @@ ArrowLeft -> Change snake direction to Left
 
 > When the player lose, it is shown a GAMEOVER menu. In that menu, the player can see the score obtained in his most recent try, and select between RESTART, to play again, MENU, to go back to the mainMenu or EXIT, to exit the game.
 
-> SnakeSize -> On top of the screen it is possible to look at the current score (which corresponds to the current size of the snake), which starts at 3 and will be increased by 1 everytime a spawn is eaten.
+> SnakeSize - Everytime the snake eats a fruit, its size is increased by 1.  
 
-> Collision Detection – the snake detects that she can’t go out of the Arena she is in nor collide with herself.
+> Score - Unlike the snake size, the score does not increase linearly. Instead, its growth depends on the fruit eaten by the snake: if the snake eats a spawn, the score increases by 1; if a banana was eaten, the score increases by 2; finally, if the snake eats a cherry, the current score is multiplied by a factor of 1.5 .    
 
-> Apple – a single spawn appears in a random position on the Arena (except in the ones previously occupied by the snake's body and in the most recent position the spawn has been randomly generated) and disappears when the snake eats it. Another single spawn appears in a different random position immediately after being eaten.
+> Fruit Chances - The fruits used in the game (spawn, banana and cherry) have different chances of appearing in the Arena: the chance of appearing a spawn is nearly 100%; however, a banana has 25% of chance to appear while a cherry has just 5%.  
+
+> Collision Detection - the snake detects that she can’t go out of the Arena she is in nor collide with herself.
+
+> Fruit – A single fruit (spawn,banana or cherry) appears in a random position on the Arena (except in the ones previously occupied by the snake's body and in the most recent position the last fruit has been randomly generated) and disappears when the snake eats it.  
+> Another single fruit appears in a different random position immediately after the previous one has been eaten.
   
 # Screenshots:
 ## MainMenu:
@@ -52,65 +57,62 @@ ArrowLeft -> Change snake direction to Left
   
 ### PLANNED FEATURES
 
->We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
-However, none of these features were implemented because we were running out of time.
+> We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
+Unfortunately, none of these features were implemented because we were running out of time.
 
 # 1.
 ##  DESIGN
 
-### Problem in Context:
+### Problem in Context
+The main problem we faced was to find a way to structure the classes so that it would be easier to read and understand the code.  
 
-The main problem we encountered was to find a way to structure the classes so that it would be easier to read and understand.
-
-### -The Pattern
-The main pattern we use as our architectural pattern was the MVC PATTERN (model-view-control pattern). This pattern is used to separate an application into three main groups of components: Models, Views, and Controllers(creating a more organized structure). Widely used for developing GUI and web applications.
+### The Pattern
+The main pattern we use as our architectural pattern was the MVC PATTERN (model-view-control pattern). This pattern is used to separate an application into three main groups of components: Models, Views, and Controllers (creating a more organized structure). Widely used for developing GUI and web applications.
 
 
-### -Implementation
+### Implementation
 ![Model-View-Controller design](/Images_Source/what-is-mvc-design-pattern_cleanup.jpg "MVC")
 
-### -Consequences
+### Consequences
 
 The use of the State Pattern in the current design allows the following benefits:
 
-• Modification Don’t Affect The Entire Model  
-• Faster Development Process  
+• Modifications Do Not Affect The Entire Model  
 • Faster Development Process
 
 
 # 2.
 ##  DESIGN
 
-### Problem in Context:
+### Problem in Context
 We needed to use the same methods in different states, both of the game and the mainMenu, needing them to be using the same structure of algorithm.
 
 
-### -The Pattern
-TEMPLATE PATTERN is used to define an algorithm as a skeleton of operations and leave the details to be implemented by the classes that use it. The overall structure and sequence of the algorithm are preserved by the core skeleton.
+### The Pattern
+The TEMPLATE PATTERN is used to define an algorithm as a skeleton of operations and leave the details to be implemented by the classes that use them. The overall structure and sequence of the algorithm are preserved by the core skeleton.
 
 
-### -Implementation
+### Implementation
 ![Template Pattern](/Images_Source/LDTS_4.png "Template Pattern")
 
-### -Consequences
-• Allows for the possibility to reuse the same algorithm in different instances of the program making only slight changes to fit the context in which we needed it.
+### Consequences
+• Allows for the possibility of reusing the same algorithm in different instances of the program making only slight changes to fit the context in which we needed it.
 
 
 # 3.
 ##  DESIGN
 
-### Problem in Context:
-As we thought in the beginning of the project, we will try to have different states, such as game state, mainMenu state and controls mainMenu state.
+### Problem in Context
+As we thought in the beginning of the project, we will try to have different states, such as game state, mainMenu state and controlsMenu state.
 
-
-### -The Pattern
+### The Pattern
 The second pattern we decided to use was the STATE PATTERN. This is a behavioral design pattern that lets an object alter its behavior depending on its state.
 
-### -Implementation
-We haven't implemented it yet, but it will be used in order to have multiple menus, also not implemented in the UML diagram.
+### Implementation
+<<falta implementar isto e colocar no uml>>
 
-### -Consequences
-• A better organization of the different screen the player will be seeing, providing an easier way of modifying a view (screen) if needed  
+### Consequences
+• A better organization of the different screens the player will be seeing, providing an easier way of modifying a view (screen) if needed.  
 • Single Responsibility Principle. The code related to each state are in separate classes   
 • Open/Closed Principle. We can introduce new states without changing existing state classes
 
@@ -118,26 +120,27 @@ We haven't implemented it yet, but it will be used in order to have multiple men
 # 4.
 ##  DESIGN
 
-### Problem in Context:
-For us to design different objects in our game that had very similar characteristics we needed a way to create new ones that share those same characteristics.
+### Problem in Context
+For us to design different objects in our game that had very similar characteristics, we needed a way to create new ones that share those same characteristics.
 
 
-### -The Pattern
+### The Pattern
 We used the FACTORY PATTERN, which is a creation design pattern that provides an interface to create objects in a superclass, so that subclasses can alter the characteristics of the new object.
 
-### -Implementation
+### Implementation
 ![Factory Pattern](/Images_Source/factory.png "Factory Pattern")
+é melhor rever esta imagem. nao sei se está certo.
 
-
-### -Consequences
-• It is now much easier to add different objects or elements to the game, for example, add new food, using the same characteristics as the previous ones.
+### Consequences
+• It is now much easier to add different objects or elements to the game. For example, if we want to add new food, using the same characteristics as the previous ones, the process will be simpler.
 
 
 # DATA CLASS
 
-## UML DIAGRAM:
+## UML DIAGRAM
 ![UML](/Images_Source/UML.png "UML")  
 Current UML state with exception to the class food that isn't implemented yet.
+temos de rever o UML e colocar tudo interligado entre si. o stor queixou se disso na apresentação.
 
 
 
