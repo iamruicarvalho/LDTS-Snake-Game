@@ -38,11 +38,8 @@ public class SnakeControllerTest {
         arena.setFruit(apple);
 
         arena.setWalls(Arrays.asList());
-
         snakeController = new SnakeController(arena);
         game = Mockito.mock(Game.class);
-
-
     }
 
     @Test
@@ -52,26 +49,23 @@ public class SnakeControllerTest {
         snake.add(new SnakeBody(10, 11));
         arena.setSnake(snake);
 
-        snakeController.DirectionLeft();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
+
+        snakeController.step(game, GUI.ACTION.LEFT, 1000);
 
         assertEquals(new Position(9, 10), arena.getSnake().get(0).getPosition());
         assertEquals(new Position(10, 10), arena.getSnake().get(1).getPosition());
 
-        snakeController.DirectionDown();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
+        snakeController.step(game, GUI.ACTION.DOWN, 1000);
 
         assertEquals(new Position(9, 11), arena.getSnake().get(0).getPosition());
         assertEquals(new Position(9, 10), arena.getSnake().get(1).getPosition());
 
-        snakeController.DirectionRight();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
+        snakeController.step(game, GUI.ACTION.RIGHT, 1000);
 
         assertEquals(new Position(10, 11), arena.getSnake().get(0).getPosition());
         assertEquals(new Position(9, 11), arena.getSnake().get(1).getPosition());
 
-        snakeController.DirectionUp();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
+        snakeController.step(game, GUI.ACTION.UP, 1000);
 
         assertEquals(new Position(10, 10), arena.getSnake().get(0).getPosition());
         assertEquals(new Position(10, 11), arena.getSnake().get(1).getPosition());
@@ -89,9 +83,7 @@ public class SnakeControllerTest {
         walls.add(new Wall(10, 9));
         arena.setWalls(walls);
 
-        snakeController.DirectionUp();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
-
+        snakeController.step(game, GUI.ACTION.UP, 1000);
 
         assertEquals(true, snakeController.getLost());
 
@@ -106,14 +98,9 @@ public class SnakeControllerTest {
         snake.add(new SnakeBody(10, 12));
         arena.setSnake(snake);
 
-        snakeController.DirectionDown();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
-
-        snakeController.DirectionLeft();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
-
-        snakeController.DirectionUp();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
+        snakeController.step(game, GUI.ACTION.DOWN, 1000);
+        snakeController.step(game, GUI.ACTION.LEFT, 1000);
+        snakeController.step(game, GUI.ACTION.UP, 1000);
 
         assertEquals( true, snakeController.getLost());
     }
@@ -125,8 +112,7 @@ public class SnakeControllerTest {
         snake.add(new SnakeBody(10, 11));
         arena.setSnake(snake);
 
-        snakeController.DirectionLeft();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
+        snakeController.step(game, GUI.ACTION.LEFT, 1000);
 
 
         assertEquals(3, arena.getSnake().size());
@@ -138,10 +124,29 @@ public class SnakeControllerTest {
         snake.add(new SnakeBody(10, 11));
         arena.setSnake(snake);
 
-        snakeController.DirectionLeft();
-        snakeController.step(game, GUI.ACTION.NONE, 1000);
+        snakeController.step(game, GUI.ACTION.LEFT, 1000);
 
         assertNotEquals(true, arena.isFruit(apple.getPosition()));
         assertNotEquals(true, arena.isFruit(arena.getSnake().get(0).getPosition()));
+    }
+
+    @Test
+    void actionTest() throws IOException, URISyntaxException, FontFormatException {
+        List<SnakeBody> snake = new ArrayList<>();
+        snake.add(new SnakeBody(10, 10));
+        snake.add(new SnakeBody(10, 11));
+        arena.setSnake(snake);
+
+        snakeController.step(game, GUI.ACTION.UP, 1000);
+        assertEquals("Up", snakeController.getDirection());
+
+        snakeController.step(game, GUI.ACTION.RIGHT, 1000);
+        assertEquals("Right", snakeController.getDirection());
+
+        snakeController.step(game, GUI.ACTION.DOWN, 1000);
+        assertEquals("Down", snakeController.getDirection());
+
+        snakeController.step(game, GUI.ACTION.LEFT, 1000);
+        assertEquals("Left", snakeController.getDirection());
     }
 }

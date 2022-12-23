@@ -1,5 +1,6 @@
 package com.aor.Snake.viewer.menu;
 
+import com.aor.Snake.ScoreBoard.SingletonScoreboard;
 import com.aor.Snake.gui.LanternaGUI;
 import com.aor.Snake.model.Position;
 import com.aor.Snake.model.menu.DificultyMenu;
@@ -19,11 +20,14 @@ public class GameOverMenuViewerTest {
      private GameOverMenu model;
      private LanternaGUI gui;
 
+     private SingletonScoreboard singletonScoreboard;
+
      @BeforeEach
      void setUp(){
          model = new GameOverMenu();
          gameOverMenuViewer = new GameOverMenuViewer(model);
          gui = Mockito.mock(LanternaGUI.class);
+         singletonScoreboard = Mockito.mock(SingletonScoreboard.class);
      }
 
      @Test
@@ -36,7 +40,7 @@ public class GameOverMenuViewerTest {
         gameOverMenuViewer.drawElements(gui);
         Mockito.verify(gui, Mockito.times(1)).changeBackgroundColor("#000000", "#000000");
         Mockito.verify(gui, Mockito.times(1)).drawText(new Position(7, 10), "@ GAME OVER @", "#FF0000", "#000000");
-        Mockito.verify(gui, Mockito.times(1)).drawText(new Position(10, 11), "SCORE:" + gameOverMenuViewer.getModel().getScore(), "#FFF300", "#000000");
+        Mockito.verify(gui, Mockito.times(1)).drawText(new Position(10, 11), "SCORE:" + singletonScoreboard.getLastScore(), "#FFF300", "#000000");
         Mockito.verify(gui, Mockito.times(1)).drawText(new Position(10, 13), gameOverMenuViewer.getModel().getEntry(0), gameOverMenuViewer.getModel().isSelected(0) ? "#D97F02" : "#FFFFFF", "#000000");
         Mockito.verify(gui, Mockito.times(1)).drawText(new Position(10, 13), gameOverMenuViewer.getModel().getEntry(0), "#D97F02", "#000000");
         Mockito.verify(gui, Mockito.times(1)).drawText(new Position(10, 13), "RESTART", "#D97F02", "#000000");

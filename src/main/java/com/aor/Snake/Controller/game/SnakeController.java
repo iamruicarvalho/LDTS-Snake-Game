@@ -121,4 +121,5 @@ public class SnakeController extends GameController {
         return this.Lost;
     }
 
+    public String getDirection() {return this.Direction;}
 }
