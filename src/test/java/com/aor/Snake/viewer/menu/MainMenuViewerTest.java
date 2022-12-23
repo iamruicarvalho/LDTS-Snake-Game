@@ -2,7 +2,6 @@ package com.aor.Snake.viewer.menu;
 
 import com.aor.Snake.gui.LanternaGUI;
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.menu.GameOverMenu;
 import com.aor.Snake.model.menu.MainMenu;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

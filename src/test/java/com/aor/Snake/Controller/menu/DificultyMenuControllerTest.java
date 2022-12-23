@@ -2,9 +2,7 @@ package com.aor.Snake.Controller.menu;
 
 import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
-import com.aor.Snake.model.game.arena.LoaderArenaBuilder;
-import com.aor.Snake.model.menu.DificultyMenu;
-import com.aor.Snake.states.GameState;
+import com.aor.Snake.model.menu.DifficultyMenu;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -16,15 +14,15 @@ import java.net.URISyntaxException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DificultyMenuControllerTest {
-    private DificultyMenuController dificultyMenuController;
-    private DificultyMenu dificultyMenu;
+    private DifficultyMenuController dificultyMenuController;
+    private DifficultyMenu dificultyMenu;
     private Game game;
 
     @BeforeEach
     void setup(){
-        dificultyMenu = Mockito.mock(DificultyMenu.class);
+        dificultyMenu = Mockito.mock(DifficultyMenu.class);
         game = Mockito.mock(Game.class);
-        dificultyMenuController = new DificultyMenuController(dificultyMenu);
+        dificultyMenuController = new DifficultyMenuController(dificultyMenu);
     }
 
     @Test

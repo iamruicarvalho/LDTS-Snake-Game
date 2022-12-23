@@ -2,7 +2,7 @@
 
 ### GAME DESCRIPTION
 
-> The SnakeGame is a basic classic game, where the goal is to be able to capture as much food as you can for the snake and every time the snake eats it, its size grows by one, making the game harder and harder as the game progresses. In the version we 've created, there are 3 levels of difficulty in the single player mode.  
+> The Snake Game is a classic game in which the objective is to capture as much fruit as possible with a snake. Each time the snake eats fruit, its size increases by one, making the game progressively more difficult. In the version we have created, there are three levels of difficulty.  
 > This project was developed by Cristiano Rocha (up202108183@fe.up.pt), Rui Carvalho (up202108807@fe.up.pt) and Guilherme Ribeiro (up202108731@fe.up.pt) in the context of a practical work on the subject of LDTS at FEUP (Faculdade de Engenharia da Universidade do Porto).
 
 ### IMPLEMENTED FEATURES
@@ -12,10 +12,11 @@ ArrowUp -> Change snake direction to Up / Move Up Menu
 ArrowDown -> Change snake direction to Down / Move Down Menu  
 ArrowRight -> Change snake direction to Right  
 ArrowLeft -> Change snake direction to Left
+Q -> Quit game
+Enter -> Select option
 
 > MENUS:  
 > The user can select between a GUI mainMenu by using ArrowUp, ArrowDown and ENTER to select the desired option. Presented possible actions START, CONTROLS, SCOREBOARD and EXIT. LeaderBoard keeps the highest score.
->
 > In the mainMenu:  
 > Selected the START option, a DIFFICULTY menu pops up, where the player can select between EASY, MEDIUM and HARD difficulty.    
 > If the player needs to check the controls, it must be selected the CONTROLS option, where a controls' guide pops up on the screen, allowing the player to see which controls to use in order to perform any move in the game.    
@@ -23,7 +24,7 @@ ArrowLeft -> Change snake direction to Left
 > Selected any of the options listed above, the player can also decide to go BACK to the mainMenu or EXIT the game.  
 > To EXIT the game, the last option must be selected.
 
-> When the player lose, it is shown a GAMEOVER menu. In that menu, the player can see the score obtained in his most recent try, and select between RESTART, to play again, MENU, to go back to the mainMenu or EXIT, to exit the game.
+> When the player lose, it is shown a GAME OVER menu. In that menu, the player can see the score obtained in his most recent try, and select between RESTART, to play again, MENU, to go back to the mainMenu or EXIT, to exit the game.
 
 > SnakeSize - Everytime the snake eats a fruit, its size is increased by 1.  
 
@@ -57,9 +58,7 @@ ArrowLeft -> Change snake direction to Left
   
 ### PLANNED FEATURES
 
-> We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
-Unfortunately, none of these features were implemented because we were running out of time.
-
+> We considered adding a multiplayer mode to allow for competition between two players and a pause menu with options to resume or return to the main menu. However, we were unable to implement these features due to time constraints.
 # 1.
 ##  DESIGN
 

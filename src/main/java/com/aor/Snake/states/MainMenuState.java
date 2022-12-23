@@ -2,8 +2,8 @@ package com.aor.Snake.states;
 
 import com.aor.Snake.Controller.Controller;
 import com.aor.Snake.Controller.menu.MainMenuController;
-import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.viewer.Viewer;
+import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.viewer.menu.MainMenuViewer;
 
 public class MainMenuState extends State<MainMenu> {

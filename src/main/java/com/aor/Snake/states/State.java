@@ -1,7 +1,7 @@
 package com.aor.Snake.states;
 
-import com.aor.Snake.Game;
 import com.aor.Snake.Controller.Controller;
+import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.viewer.Viewer;
 

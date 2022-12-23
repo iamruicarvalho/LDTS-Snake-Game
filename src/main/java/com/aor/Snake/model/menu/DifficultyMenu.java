@@ -3,11 +3,11 @@ package com.aor.Snake.model.menu;
 import java.util.Arrays;
 import java.util.List;
 
-public class    DificultyMenu {
+public class DifficultyMenu {
     private final List<String> entries;
     private int currentEntry = 0;
 
-    public DificultyMenu() {
+    public DifficultyMenu() {
         this.entries = Arrays.asList("EASY", "MEDIUM","HARD", "BACK","EXIT");
     }
 

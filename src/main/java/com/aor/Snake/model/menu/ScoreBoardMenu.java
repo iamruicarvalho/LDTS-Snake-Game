@@ -1,6 +1,11 @@
 package com.aor.Snake.model.menu;
 
-import java.io.*;
+import com.aor.Snake.ScoreBoard.SingletonScoreboard;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,21 +16,6 @@ public class ScoreBoardMenu {
 
     public ScoreBoardMenu() {
         this.entries = Arrays.asList("BACK", "EXIT");
-    }
-
-    public String getHighScore() throws IOException {
-        File file = new File("scoreBoard/Scoreboard.txt");
-        String filePath = file.getAbsolutePath();
-        filePath = filePath.replaceAll("/", "\\\\");
-
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
-            for (String line; (line = bufferedReader.readLine()) != null;) {
-                lines.add(line);
-            }
-        }
-
-        return lines.isEmpty() ? "" : lines.get(0);
     }
 
 

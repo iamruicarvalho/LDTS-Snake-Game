@@ -2,13 +2,13 @@ package com.aor.Snake.viewer.menu;
 
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.menu.DificultyMenu;
 import com.aor.Snake.viewer.Viewer;
+import com.aor.Snake.model.menu.DifficultyMenu;
 
 import java.io.IOException;
 
-public class DificultyMenuViewer extends Viewer<DificultyMenu> {
-    public DificultyMenuViewer(DificultyMenu model) {super(model);}
+public class DifficultyMenuViewer extends Viewer<DifficultyMenu> {
+    public DifficultyMenuViewer(DifficultyMenu model) {super(model);}
 
     @Override
     protected void drawElements(GUI gui) throws IOException {

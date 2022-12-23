@@ -3,8 +3,8 @@ package com.aor.Snake.viewer.menu;
 import com.aor.Snake.ScoreBoard.SingletonScoreboard;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.menu.GameOverMenu;
 import com.aor.Snake.viewer.Viewer;
+import com.aor.Snake.model.menu.GameOverMenu;
 
 import java.io.IOException;
 
