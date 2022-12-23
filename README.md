@@ -146,7 +146,7 @@ temos de rever o UML e colocar tudo interligado entre si. o stor queixou se diss
 
 
 # TESTING
-### Mockito/JUnit
+## Mockito/JUnit
 * #### Inside the main test folder:
 
 ![MainTestFolder](/Images_Source/MainTestFolder.png "MainTestFolder")
@@ -165,6 +165,61 @@ temos de rever o UML e colocar tudo interligado entre si. o stor queixou se diss
 
 * #### Inside /viewer:
 ![viewerTestFolder](/Images_Source/viewerTestFolder.png "viewerTestFolder")
+
+## PITest
+
+As part of our project, we are using mutation testing to ensure the quality and effectiveness of our group of tests. We are using PITest to perform mutation testing on our Java code. By creating mutants of our code and running our group of tests, we can determine whether the group of tests is able to detect the mutants and identify any potential defects in the code. This helps us improve the coverage and thoroughness of our group of tests, leading to a more robust and reliable final product.
+
+### Coverage Report
+![coverageReportPITest](/Images_Source/PITest.png "coverageReportPITest")
+
+### Mutant Killing
+
+While using PITest for mutation testing on our Java code, we were able to identify a number of mutants and "kill" them. This process resulted in a more durable and trustworthy final product.
+
+#### Here are the befores and afters of the Mutants we found:
+* #### 1.
+![Mutant1](/Images_Source/Mutant1.png "Mutant1")
+
+This Mutant was created signaling that if this code was removed our tests would not account for that change:
+
+![Mutant1Errors](/Images_Source/Mutant1%20Errors.png "Mutant1 Errors")
+
+Now while resolving this issue and killing this mutant we created some new tests and changed other ones and interestingly found something we could improve in our code as well, so this was one of the benefits of implementing PITests into project.
+Here is the code and the Mutant after the changes:
+
+![Mutant1Resolved](/Images_Source/Mutant1Resolved.png "Mutant1Resolved")
+
+![Mutant1ErrorsResolved](/Images_Source/Mutant1ErrorsResolved.png "Mutant1ErrorsResolved")
+
+* #### 2.
+
+Before:
+
+![Mutant2](/Images_Source/Mutant2.png "Mutant2")
+
+![Mutant2Error](/Images_Source/Mutant2Error.png "Mutant2Error")
+
+After:
+
+![Mutant2Resolved](/Images_Source/Mutant2Resolved.png "Mutant2Resolved")
+
+![Mutant2ErrorResolved](/Images_Source/Mutant2ErrorResolved.png "Mutant2ErrorResolved")
+
+* #### 3.
+
+Before:
+
+![Mutant3](/Images_Source/Mutant3.png "Mutant3")
+
+![Mutant3Error](/Images_Source/Mutant3Error.png "Mutant3Error")
+
+After:
+
+![Mutant3Resolved](/Images_Source/Mutant3Resolved.png "Mutant3Resolved")
+
+![Mutant3ErrorResolved](/Images_Source/Mutant3ErrorResolved.png "Mutant3ErrorResolved")
+
 
 # SELF-EVALUATION
 Cristiano Rocha up202108813 100%  
