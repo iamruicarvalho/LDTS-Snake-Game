@@ -146,9 +146,25 @@ temos de rever o UML e colocar tudo interligado entre si. o stor queixou se diss
 
 
 # TESTING
-Not yet fully implemented.  
-(…)
+### Mockito/JUnit
+* #### Inside the main test folder:
 
+![MainTestFolder](/Images_Source/MainTestFolder.png "MainTestFolder")
+
+* #### Inside /Controller:
+![ControllerTestFolder](/Images_Source/ControllerTestFolder.png "ControllerTestFolder")
+
+* #### Inside /gui:
+![guiTestFolder](/Images_Source/guiTestFolder.png "guiTestFolder")
+
+* #### Inside /model:
+![modelTestFolder](/Images_Source/modelTestFolder.png "modelTestFolder")
+
+* #### Inside /ScoreBoard:
+![ScoreBoardTestFolder](/Images_Source/ScoreBoardTestFolder.png "ScoreBoardTestFolder")
+
+* #### Inside /viewer:
+![viewerTestFolder](/Images_Source/viewerTestFolder.png "viewerTestFolder")
 
 # SELF-EVALUATION
 Cristiano Rocha up202108813 100%  
