@@ -53,7 +53,7 @@ public class Arena {
     public void IncrementScore(int increment) {Score += increment;}
     public void MultiplyScore(double multiplier) {
         double aux = Score * multiplier;
-        if (aux > 5) {Score = (int) Math.ceil(aux);}
+        if ((int) Math.ceil(aux) > 5) {Score = (int) Math.ceil(aux);}
         else {IncrementScore(5);}
     }
 
@@ -81,9 +81,9 @@ public class Arena {
         Fruit new_fruit = null;
         int max = 27;
         int min = 2;
-        if (fruit instanceof Apple) {IncrementScore(1);}
-        else if (fruit instanceof Banana) {IncrementScore(2);}
-        else if (fruit instanceof Cherry) {MultiplyScore(1.5);}
+        if (fruit instanceof Apple) IncrementScore(1);
+        else if (fruit instanceof Banana) IncrementScore(2);
+        else if (fruit instanceof Cherry) MultiplyScore(1.5);
         int aux_score = Score;
 
         while (new_fruit == null || !isEmpty(new_fruit.getPosition()) || fruit.getPosition() == new_fruit.getPosition()) {
