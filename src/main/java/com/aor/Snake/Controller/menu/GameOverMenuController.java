@@ -1,14 +1,14 @@
 package com.aor.Snake.Controller.menu;
 
 
-import com.aor.Snake.Game;
 import com.aor.Snake.Controller.Controller;
+import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.game.arena.LoaderArenaBuilder;
-import com.aor.Snake.model.menu.GameOverMenu;
-import com.aor.Snake.model.menu.MainMenu;
 import com.aor.Snake.states.GameState;
 import com.aor.Snake.states.MainMenuState;
+import com.aor.Snake.model.menu.GameOverMenu;
+import com.aor.Snake.model.menu.MainMenu;
 
 import java.awt.*;
 import java.io.IOException;

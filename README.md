@@ -2,7 +2,11 @@
 
 ### GAME DESCRIPTION
 
+<<<<<<< HEAD
 > The SnakeGame is a basic classic game, where the goal is to be able to capture as much food as you can for the snake and every time the snake eats it, its size grows by one, making the game harder and harder as the game progresses. In the version we 've created, there are 3 levels of difficulty.  
+=======
+> The Snake Game is a classic game in which the objective is to capture as much fruit as possible with a snake. Each time the snake eats fruit, its size increases by one, making the game progressively more difficult. In the version we have created, there are three levels of difficulty.  
+>>>>>>> ed15f661cecb2fdf9a09c820566fc706aa27a7b8
 > This project was developed by Cristiano Rocha (up202108183@fe.up.pt), Rui Carvalho (up202108807@fe.up.pt) and Guilherme Ribeiro (up202108731@fe.up.pt) in the context of a practical work on the subject of LDTS at FEUP (Faculdade de Engenharia da Universidade do Porto).
 
 ### IMPLEMENTED FEATURES
@@ -12,10 +16,11 @@ ArrowUp -> Change snake direction to Up / Move Up Menu
 ArrowDown -> Change snake direction to Down / Move Down Menu  
 ArrowRight -> Change snake direction to Right  
 ArrowLeft -> Change snake direction to Left
+Q -> Quit game
+Enter -> Select option
 
 > MENUS:  
 > The user can select between a GUI mainMenu by using ArrowUp, ArrowDown and ENTER to select the desired option. Presented possible actions START, CONTROLS, SCOREBOARD and EXIT. LeaderBoard keeps the highest score.
->
 > In the mainMenu:  
 > Selected the START option, a DIFFICULTY menu pops up, where the player can select between EASY, MEDIUM and HARD difficulty.    
 > If the player needs to check the controls, it must be selected the CONTROLS option, where a controls' guide pops up on the screen, allowing the player to see which controls to use in order to perform any move in the game.    
@@ -23,7 +28,7 @@ ArrowLeft -> Change snake direction to Left
 > Selected any of the options listed above, the player can also decide to go BACK to the mainMenu or EXIT the game.  
 > To EXIT the game, the last option must be selected.
 
-> When the player lose, it is shown a GAMEOVER menu. In that menu, the player can see the score obtained in his most recent try, and select between RESTART, to play again, MENU, to go back to the mainMenu or EXIT, to exit the game.
+> When the player lose, it is shown a GAME OVER menu. In that menu, the player can see the score obtained in his most recent try, and select between RESTART, to play again, MENU, to go back to the mainMenu or EXIT, to exit the game.
 
 > SnakeSize - Everytime the snake eats a fruit, its size is increased by 1.  
 
@@ -57,12 +62,12 @@ ArrowLeft -> Change snake direction to Left
 ![GAMEOVER](/Images_Source/gameOverMenu.PNG "GAMEOVER")
   
 ### PLANNED FEATURES
-
 > We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
 Unfortunately, none of these features were implemented because we were running out of time.
 
 ## 1.
 ## DESIGN
+We considered adding a multiplayer mode to allow for competition between two players and a pause menu with options to resume or return to the main menu. However, we were unable to implement these features due to time constraints.
 
 ### Problem in Context
 The main problem we faced was to find a way to structure the classes so that it would be easier to read and understand the code.  
@@ -182,7 +187,7 @@ Ultimately, our goal is to create a codebase that is both easy to understand and
 
 
 # TESTING
-### Mockito/JUnit
+## Mockito/JUnit
 * #### Inside the main test folder:
 
 ![MainTestFolder](/Images_Source/MainTestFolder.png "MainTestFolder")
@@ -204,6 +209,61 @@ Ultimately, our goal is to create a codebase that is both easy to understand and
 
 * #### Inside /viewer:
 ![viewerTestFolder](/Images_Source/viewerTestFolder.png "viewerTestFolder")
+
+## PITest
+
+As part of our project, we are using mutation testing to ensure the quality and effectiveness of our group of tests. We are using PITest to perform mutation testing on our Java code. By creating mutants of our code and running our group of tests, we can determine whether the group of tests is able to detect the mutants and identify any potential defects in the code. This helps us improve the coverage and thoroughness of our group of tests, leading to a more robust and reliable final product.
+
+### Coverage Report
+![coverageReportPITest](/Images_Source/PITest.png "coverageReportPITest")
+
+### Mutant Killing
+
+While using PITest for mutation testing on our Java code, we were able to identify a number of mutants and "kill" them. This process resulted in a more durable and trustworthy final product.
+
+#### Here are the befores and afters of the Mutants we found:
+* #### 1.
+![Mutant1](/Images_Source/Mutant1.png "Mutant1")
+
+This Mutant was created signaling that if this code was removed our tests would not account for that change:
+
+![Mutant1Errors](/Images_Source/Mutant1%20Errors.png "Mutant1 Errors")
+
+Now while resolving this issue and killing this mutant we created some new tests and changed other ones and interestingly found something we could improve in our code as well, so this was one of the benefits of implementing PITests into project.
+Here is the code and the Mutant after the changes:
+
+![Mutant1Resolved](/Images_Source/Mutant1Resolved.png "Mutant1Resolved")
+
+![Mutant1ErrorsResolved](/Images_Source/Mutant1ErrorsResolved.png "Mutant1ErrorsResolved")
+
+* #### 2.
+
+Before:
+
+![Mutant2](/Images_Source/Mutant2.png "Mutant2")
+
+![Mutant2Error](/Images_Source/Mutant2Error.png "Mutant2Error")
+
+After:
+
+![Mutant2Resolved](/Images_Source/Mutant2Resolved.png "Mutant2Resolved")
+
+![Mutant2ErrorResolved](/Images_Source/Mutant2ErrorResolved.png "Mutant2ErrorResolved")
+
+* #### 3.
+
+Before:
+
+![Mutant3](/Images_Source/Mutant3.png "Mutant3")
+
+![Mutant3Error](/Images_Source/Mutant3Error.png "Mutant3Error")
+
+After:
+
+![Mutant3Resolved](/Images_Source/Mutant3Resolved.png "Mutant3Resolved")
+
+![Mutant3ErrorResolved](/Images_Source/Mutant3ErrorResolved.png "Mutant3ErrorResolved")
+
 
 # SELF-EVALUATION
 Cristiano Rocha up202108813 100%  

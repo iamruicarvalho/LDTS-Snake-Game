@@ -3,18 +3,14 @@ package com.aor.Snake.Controller.game;
 import com.aor.Snake.Game;
 import com.aor.Snake.ScoreBoard.SingletonScoreboard;
 import com.aor.Snake.gui.GUI;
-import com.aor.Snake.model.Position;
 import com.aor.Snake.model.game.arena.Arena;
 import com.aor.Snake.model.game.elements.SnakeBody;
-
-import com.aor.Snake.model.menu.GameOverMenu;
 import com.aor.Snake.states.GameOverMenuState;
+import com.aor.Snake.model.menu.GameOverMenu;
 
 import java.awt.*;
-import java.net.URISyntaxException;
-
 import java.io.IOException;
-
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,8 +45,10 @@ public class SnakeController extends GameController {
         if (Lost) {
             SingletonScoreboard instance = SingletonScoreboard.getInstance();
             int score = getModel().getScore();  //Score obtained during gameplay
-            instance.UpdateHighScore(score);    //Updates if better than the one before
-
+            if (score > instance.getHighScore()) {
+                instance.UpdateHighScore(score);    //Updates if better than the one before
+                instance.setHighScore(score);
+            }
             GameOverMenu gameOverMenu = new GameOverMenu();
             instance.setLastScore(score);
             game.setState(new GameOverMenuState(gameOverMenu));
@@ -115,7 +113,6 @@ public class SnakeController extends GameController {
         }
         else {Lost = true;}
     }
-
 
     public boolean getLost() {
         return this.Lost;

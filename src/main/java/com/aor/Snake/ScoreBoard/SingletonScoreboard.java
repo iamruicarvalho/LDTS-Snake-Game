@@ -41,7 +41,7 @@ public class SingletonScoreboard {
         if (!lines.isEmpty()) {
             highScore = Integer.parseInt(lines.get(0));
         }
-        highScore = 0;
+        else {highScore = 0;}
     }
 
     //Changes HighScore if higher than the one on the file

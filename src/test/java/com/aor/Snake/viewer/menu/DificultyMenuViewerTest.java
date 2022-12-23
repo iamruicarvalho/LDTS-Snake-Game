@@ -2,10 +2,7 @@ package com.aor.Snake.viewer.menu;
 
 import com.aor.Snake.gui.LanternaGUI;
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.menu.DificultyMenu;
-import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.screen.Screen;
+import com.aor.Snake.model.menu.DifficultyMenu;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -16,14 +13,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DificultyMenuViewerTest {
 
-    private DificultyMenuViewer dificultyMenuViewer;
-    private DificultyMenu model;
+    private DifficultyMenuViewer dificultyMenuViewer;
+    private DifficultyMenu model;
     private LanternaGUI gui;
 
     @BeforeEach
     void setUp() {
-        model = new DificultyMenu();
-        dificultyMenuViewer = new DificultyMenuViewer(model);
+        model = new DifficultyMenu();
+        dificultyMenuViewer = new DifficultyMenuViewer(model);
         gui = Mockito.mock(LanternaGUI.class);
     }
 

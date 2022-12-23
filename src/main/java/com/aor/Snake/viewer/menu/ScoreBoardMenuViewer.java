@@ -1,9 +1,10 @@
 package com.aor.Snake.viewer.menu;
 
+import com.aor.Snake.ScoreBoard.SingletonScoreboard;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.menu.ScoreBoardMenu;
 import com.aor.Snake.viewer.Viewer;
+import com.aor.Snake.model.menu.ScoreBoardMenu;
 
 import java.io.IOException;
 
@@ -15,8 +16,9 @@ public class ScoreBoardMenuViewer extends Viewer<ScoreBoardMenu> {
 
     @Override
     protected void drawElements(GUI gui) throws IOException {
+        SingletonScoreboard instance = SingletonScoreboard.getInstance();
         gui.drawText(new Position(7, 10), "@ SCOREBOARD @", "#000CFF", "#000000");
-        gui.drawText(new Position(6, 12), "BEST SCORE: " + getModel().getHighScore(), "#FFD700", "#000000");
+        gui.drawText(new Position(6, 12), "BEST SCORE: " + instance.getHighScore(), "#FFD700", "#000000");
 
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(

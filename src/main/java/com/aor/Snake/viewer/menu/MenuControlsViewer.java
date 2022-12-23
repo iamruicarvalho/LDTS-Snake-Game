@@ -2,8 +2,8 @@ package com.aor.Snake.viewer.menu;
 
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.Position;
-import com.aor.Snake.model.menu.MenuControls;
 import com.aor.Snake.viewer.Viewer;
+import com.aor.Snake.model.menu.MenuControls;
 
 import java.io.IOException;
 

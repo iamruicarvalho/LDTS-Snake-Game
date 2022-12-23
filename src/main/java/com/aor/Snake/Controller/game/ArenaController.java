@@ -17,6 +17,5 @@ public class ArenaController extends GameController {
 
     public void step(Game game, GUI.ACTION action, long time) throws IOException, URISyntaxException, FontFormatException {
         snakeController.step(game, action, time);
-
     }
 }

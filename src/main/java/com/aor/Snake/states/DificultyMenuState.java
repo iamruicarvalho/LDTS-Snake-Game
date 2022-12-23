@@ -1,22 +1,22 @@
 package com.aor.Snake.states;
 
 import com.aor.Snake.Controller.Controller;
-import com.aor.Snake.Controller.menu.DificultyMenuController;
-import com.aor.Snake.model.menu.DificultyMenu;
+import com.aor.Snake.Controller.menu.DifficultyMenuController;
 import com.aor.Snake.viewer.Viewer;
-import com.aor.Snake.viewer.menu.DificultyMenuViewer;
+import com.aor.Snake.model.menu.DifficultyMenu;
+import com.aor.Snake.viewer.menu.DifficultyMenuViewer;
 
-public class DificultyMenuState extends State<DificultyMenu> {
+public class DificultyMenuState extends State<DifficultyMenu> {
 
-    public DificultyMenuState(DificultyMenu model) {super(model);}
+    public DificultyMenuState(DifficultyMenu model) {super(model);}
 
     @Override
-    protected Viewer<DificultyMenu> getViewer() {
-        return new DificultyMenuViewer(getModel());
+    protected Viewer<DifficultyMenu> getViewer() {
+        return new DifficultyMenuViewer(getModel());
     }
 
     @Override
-    protected Controller<DificultyMenu> getController() {
-        return new DificultyMenuController(getModel());
+    protected Controller<DifficultyMenu> getController() {
+        return new DifficultyMenuController(getModel());
     }
 }

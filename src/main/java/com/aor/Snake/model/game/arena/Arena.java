@@ -30,6 +30,9 @@ public class Arena {
         return width;
     }
 
+    public int getHeight() {return height;}
+
+
     public List<Wall> getWalls() {
         return walls;
     }

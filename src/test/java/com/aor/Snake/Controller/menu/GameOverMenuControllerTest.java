@@ -3,9 +3,6 @@ package com.aor.Snake.Controller.menu;
 import com.aor.Snake.Game;
 import com.aor.Snake.gui.GUI;
 import com.aor.Snake.model.menu.GameOverMenu;
-import com.aor.Snake.model.menu.MainMenu;
-import com.aor.Snake.states.GameOverMenuState;
-import com.aor.Snake.states.MainMenuState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,8 +10,6 @@ import org.mockito.Mockito;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class GameOverMenuControllerTest {
@@ -57,6 +52,7 @@ public class GameOverMenuControllerTest {
         Mockito.when(gameOverMenuController.getModel().isSelectedExit()).thenReturn(true);
         gameOverMenuController.step(game, GUI.ACTION.SELECT, 1000);
 
+
         Mockito.verify(gameOverMenuController.getModel(), Mockito.times(0)).previousEntry();
         Mockito.verify(gameOverMenuController.getModel(), Mockito.times(0)).nextEntry();
         Mockito.verify(gameOverMenuController.getModel(), Mockito.times(1)).isSelectedExit();
@@ -68,6 +64,7 @@ public class GameOverMenuControllerTest {
     void stepCaseSelectMenu() throws IOException, URISyntaxException, FontFormatException {
         Mockito.when(gameOverMenuController.getModel().isSelectedMenu()).thenReturn(true);
         gameOverMenuController.step(game, GUI.ACTION.SELECT, 1000);
+
 
         Mockito.verify(gameOverMenuController.getModel(), Mockito.times(0)).previousEntry();
         Mockito.verify(gameOverMenuController.getModel(), Mockito.times(0)).nextEntry();
@@ -89,5 +86,4 @@ public class GameOverMenuControllerTest {
         Mockito.verify(gameOverMenuController.getModel(), Mockito.times(1)).isSelectedRestart();
         Mockito.verify(game, Mockito.times(0)).setState(null);
     }
-    
 }
