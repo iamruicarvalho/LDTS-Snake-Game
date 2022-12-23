@@ -2,7 +2,7 @@
 
 ### GAME DESCRIPTION
 
-> The SnakeGame is a basic classic game, where the goal is to be able to capture as much food as you can for the snake and every time the snake eats it, its size grows by one, making the game harder and harder as the game progresses. In the version we 've created, there are 3 levels of difficulty in the single player mode.  
+> The SnakeGame is a basic classic game, where the goal is to be able to capture as much food as you can for the snake and every time the snake eats it, its size grows by one, making the game harder and harder as the game progresses. In the version we 've created, there are 3 levels of difficulty.  
 > This project was developed by Cristiano Rocha (up202108183@fe.up.pt), Rui Carvalho (up202108807@fe.up.pt) and Guilherme Ribeiro (up202108731@fe.up.pt) in the context of a practical work on the subject of LDTS at FEUP (Faculdade de Engenharia da Universidade do Porto).
 
 ### IMPLEMENTED FEATURES
@@ -29,12 +29,13 @@ ArrowLeft -> Change snake direction to Left
 
 > Score - Unlike the snake size, the score does not increase linearly. Instead, its growth depends on the fruit eaten by the snake: if the snake eats a spawn, the score increases by 1; if a banana was eaten, the score increases by 2; finally, if the snake eats a cherry, the current score is multiplied by a factor of 1.5 .    
 
-> Fruit Chances - The fruits used in the game (spawn, banana and cherry) have different chances of appearing in the Arena: the chance of appearing a spawn is nearly 100%; however, a banana has 25% of chance to appear while a cherry has just 5%.  
-
-> Collision Detection - the snake detects that she can’t go out of the Arena she is in nor collide with herself.
+> Fruit's Appearance Chances - The fruits used in the game (spawn, banana and cherry) have different chances of appearing in the Arena: the chance of appearing a spawn is nearly 100%; however, a banana has 25% of chance to appear while a cherry has just 5%.  
 
 > Fruit – A single fruit (spawn,banana or cherry) appears in a random position on the Arena (except in the ones previously occupied by the snake's body and in the most recent position the last fruit has been randomly generated) and disappears when the snake eats it.  
-> Another single fruit appears in a different random position immediately after the previous one has been eaten.
+> Another single fruit appears in a different random position immediately after the previous one has been eaten.  
+
+> Collision Detection - The snake detects that she can’t go out of the Arena she is in nor collide with herself.
+
   
 # Screenshots:
 ## MainMenu:
@@ -60,8 +61,8 @@ ArrowLeft -> Change snake direction to Left
 > We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
 Unfortunately, none of these features were implemented because we were running out of time.
 
-# 1.
-##  DESIGN
+## 1.
+## DESIGN
 
 ### Problem in Context
 The main problem we faced was to find a way to structure the classes so that it would be easier to read and understand the code.  
@@ -81,8 +82,8 @@ The use of the State Pattern in the current design allows the following benefits
 • Faster Development Process
 
 
-# 2.
-##  DESIGN
+## 2.
+## DESIGN
 
 ### Problem in Context
 We needed to use the same methods in different states, both of the game and the mainMenu, needing them to be using the same structure of algorithm.
@@ -99,8 +100,8 @@ The TEMPLATE PATTERN is used to define an algorithm as a skeleton of operations 
 • Allows for the possibility of reusing the same algorithm in different instances of the program making only slight changes to fit the context in which we needed it.
 
 
-# 3.
-##  DESIGN
+## 3.
+## DESIGN
 
 ### Problem in Context
 As we thought in the beginning of the project, we will try to have different states, such as game state, mainMenu state and controlsMenu state.
@@ -117,8 +118,8 @@ The second pattern we decided to use was the STATE PATTERN. This is a behavioral
 • Open/Closed Principle. We can introduce new states without changing existing state classes
 
 
-# 4.
-##  DESIGN
+## 4.
+## DESIGN
 
 ### Problem in Context
 For us to design different objects in our game that had very similar characteristics, we needed a way to create new ones that share those same characteristics.
@@ -197,6 +198,9 @@ Ultimately, our goal is to create a codebase that is both easy to understand and
 
 * #### Inside /ScoreBoard:
 ![ScoreBoardTestFolder](/Images_Source/ScoreBoardTestFolder.png "ScoreBoardTestFolder")
+
+* #### Inside /states:
+
 
 * #### Inside /viewer:
 ![viewerTestFolder](/Images_Source/viewerTestFolder.png "viewerTestFolder")
