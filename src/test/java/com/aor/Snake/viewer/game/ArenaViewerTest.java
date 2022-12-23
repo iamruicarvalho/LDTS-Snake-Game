@@ -9,6 +9,7 @@ import com.aor.Snake.model.game.elements.SnakeBody;
 import com.aor.Snake.model.game.elements.Wall;
 import com.aor.Snake.viewer.game.Element.GameViewer;
 import com.aor.Snake.viewer.game.Element.SnakeViewer;
+import com.aor.Snake.viewer.game.Fruit.AppleViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -23,6 +24,7 @@ public class ArenaViewerTest {
     private List<SnakeBody> snake;
     private GameViewer viewer;
     private SnakeViewer snakeViewer;
+    private AppleViewer appleViewer;
     private Arena arena;
     private Apple apple;
 
@@ -32,9 +34,8 @@ public class ArenaViewerTest {
         gui = Mockito.mock(GUI.class);
         viewer = new GameViewer(arena);
         snakeViewer = new SnakeViewer();
-        apple = (Apple) FruitFactory.createFruit("Apple", new Position(10, 10));
-        arena.setFruit(apple);
-
+        apple = Mockito.mock(Apple.class);
+        appleViewer = Mockito.mock(AppleViewer.class);
         arena.setWalls(Arrays.asList(new Wall(1,2), new Wall(2,3), new Wall(3,4)));
         arena.setSnake( new ArrayList<>());
         snake = new ArrayList<>();
@@ -51,7 +52,14 @@ public class ArenaViewerTest {
         Mockito.verify(gui, Mockito.times(3)).drawWall(Mockito.any(Position.class));
     }
 
-
+    @Test
+    void drawApple() throws IOException {
+        apple = new Apple(new Position(10, 10));
+        arena.setFruit(apple);
+        viewer.draw(gui);
+        appleViewer.draw(apple, gui);
+        Mockito.verify(gui, Mockito.times(1)).drawApple(apple.getPosition());
+    }
 
     @Test
     void drawSnake() throws IOException {
