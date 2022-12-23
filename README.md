@@ -205,7 +205,7 @@ Ultimately, our goal is to create a codebase that is both easy to understand and
 ![ScoreBoardTestFolder](/Images_Source/ScoreBoardTestFolder.png "ScoreBoardTestFolder")
 
 * #### Inside /states:
-
+![statesTestFolder](/Images_Source/statesTestFolder.png "statesTestFolder")
 
 * #### Inside /viewer:
 ![viewerTestFolder](/Images_Source/viewerTestFolder.png "viewerTestFolder")
