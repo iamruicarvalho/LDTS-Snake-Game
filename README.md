@@ -39,6 +39,9 @@ Enter -> Select option
 
   
 # Screenshots:
+## Gameplay:
+![GamePlay](/Images_Source/GamePlay.gif "GamePlay")
+
 ## MainMenu:
 ![MainMenu](/Images_Source/mainMenu.PNG "MainMenu")
   
@@ -55,7 +58,7 @@ Enter -> Select option
 ![SnakeInPlay](/Images_Source/Game.PNG "Snake") 
   
 ## GameOverMenu
-![GAMEOVER](/Images_Source/gameOverMenu.PNG "GAMEOVER")
+![GameOver](/Images_Source/gameOverMenu.PNG "GameOver")
   
 ### PLANNED FEATURES
 > We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
