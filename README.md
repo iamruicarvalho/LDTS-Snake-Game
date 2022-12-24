@@ -65,84 +65,88 @@ Enter -> Select option
 ![GameOver](/Images_Source/gameOverMenu.PNG "GameOver")
   
 ### PLANNED FEATURES
-> We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
-Unfortunately, none of these features were implemented because we were running out of time.
+>We considered adding a multiplayer mode to allow for competition between two players and a pause menu with options to resume or return to the main menu. However, we were unable to implement these features due to time constraints.
 
 ## 1.
 ## DESIGN
-We considered adding a multiplayer mode to allow for competition between two players and a pause menu with options to resume or return to the main menu. However, we were unable to implement these features due to time constraints.
-
 ### Problem in Context
-The main problem we faced was to find a way to structure the classes so that it would be easier to read and understand the code.  
+One of the main challenges we faced was finding a way to effectively organize and structure the code in a manner that would be easy to maintain and expand upon.
 
 ### The Pattern
-The main pattern we use as our architectural pattern was the MVC PATTERN (model-view-control pattern). This pattern is used to separate an application into three main groups of components: Models, Views, and Controllers (creating a more organized structure). Widely used for developing GUI and web applications.
-
+The MVC (Model-View-Controller) design pattern is the main architectural pattern that we use. This pattern helps to separate an application into three main groups of components: Models, Views, and Controllers. 
+The purpose of this separation is to create a more organized and structured codebase.
+It allows for a clear separation of concerns between the data and logic of the application (Model), the user interface (View), and the interaction between the two (Controller). 
 
 ### Implementation
-![Model-View-Controller design](/Images_Source/what-is-mvc-design-pattern_cleanup.jpg "MVC")
+![Model-View-Controller design](/Images_Source/MVC.png "MVC")
+Top -> Controllers  
+Bottom -> Models  
+Right -> Viewers  
+The Controller interface and Viewer interface are also part of the MVC implementation
 
-### Consequences
+## Consequences
 
-The use of the State Pattern in the current design allows the following benefits:
+##### The use of the MVC in the current design allows the following benefits:
 
-• Modifications Do Not Affect The Entire Model  
-• Faster Development Process
+• Improved maintainability by dividing the code into distinct components, it can be easier to modify and maintain each component independently.  
+
+• The MVC pattern helps to separate the different aspects of an application into distinct components
 
 
 ## 2.
 ## DESIGN
 
 ### Problem in Context
-We needed to use the same methods in different states, both of the game and the mainMenu, needing them to be using the same structure of algorithm.
-
+In order to define multiple menus and a gameplay state,
+each with their own unique behavior and state, we decided to implement the state pattern.
 
 ### The Pattern
-The TEMPLATE PATTERN is used to define an algorithm as a skeleton of operations and leave the details to be implemented by the classes that use them. The overall structure and sequence of the algorithm are preserved by the core skeleton.
+The state pattern is a design pattern that allows for the encapsulation of behavior
+and state within individual objects. This allows us to centralize the logic for each menu or gameplay state in a single place, making it easier to manage the different states of the game and the transitions between them.
 
 
 ### Implementation
-![Template Pattern](/Images_Source/LDTS_4.png "Template Pattern")
+![State Pattern](/Images_Source/State.png "State Pattern")
 
 ### Consequences
-• Allows for the possibility of reusing the same algorithm in different instances of the program making only slight changes to fit the context in which we needed it.
+• Improves readability of the code, as it allows for the logic for each state to be self-contained within the corresponding object.  
+
+• Improved maintainability by centralizing the logic for each state in a single place, the state pattern can make it easier to modify and maintain the code.
 
 
 ## 3.
 ## DESIGN
 
 ### Problem in Context
-As we thought in the beginning of the project, we will try to have different states, such as game state, mainMenu state and controlsMenu state.
-
+In order to store and access the highScore and lastScore from any class in our application, we decided to implement the singleton pattern.
 ### The Pattern
-The second pattern we decided to use was the STATE PATTERN. This is a behavioral design pattern that lets an object alter its behavior depending on its state.
-
+The singleton pattern is a design pattern that ensures that a class has only one instance, and provides a global access point to that instance.
 ### Implementation
-<<falta implementar isto e colocar no uml>>
+![Singleton Pattern](/Images_Source/Singleton.png "Singleton Pattern")
+Singleton is being used by other class's, as visible in the UML diagram.
 
 ### Consequences
-• A better organization of the different screens the player will be seeing, providing an easier way of modifying a view (screen) if needed.  
-• Single Responsibility Principle. The code related to each state are in separate classes   
-• Open/Closed Principle. We can introduce new states without changing existing state classes
+•  By ensuring that there is only one instance of a class, the singleton pattern allows for a centralized management of shared state and resources.  
+•  The singleton pattern can improve the readability of the code, as it allows for the logic for managing shared state and resources to be self-contained within the singleton class.
 
 
 ## 4.
 ## DESIGN
 
 ### Problem in Context
-For us to design different objects in our game that had very similar characteristics, we needed a way to create new ones that share those same characteristics.
-
-
+To create different types of fruit for the snake game, we utilized the Factory Pattern.
+We used the Factory Pattern to create different types of fruit for the snake game. By defining an interface for creating fruit and implementing concrete classes for each type of fruit, we were able to create a variety of fruit objects without having to specify their concrete classes
 ### The Pattern
-We used the FACTORY PATTERN, which is a creation design pattern that provides an interface to create objects in a superclass, so that subclasses can alter the characteristics of the new object.
+The Factory Pattern is a design pattern that provides an interface for creating objects
+in a super class, but allows subclasses to alter the type of objects that will be created.
+This allows for the creation of different types of objects without specifying their concrete classes.
 
 ### Implementation
-![Factory Pattern](/Images_Source/factory.png "Factory Pattern")
-é melhor rever esta imagem. nao sei se está certo.
+![Factory Pattern](/Images_Source/Factory.png "Factory Pattern")
 
 ### Consequences
-• It is now much easier to add different objects or elements to the game. For example, if we want to add new food, using the same characteristics as the previous ones, the process will be simpler.
-• Open/Closed Principle. We can introduce new elements (fruits) without changing the existing element classes
+• The Factory Pattern allows for the creation of different types of objects without specifying their concrete classes, improving the flexibility
+• The Factory Pattern can improve the readability of the code, as it allows for the logic for creating objects to be self-contained within the factory class in our case the FruitFactory
 
 
 # DATA CLASS
@@ -269,6 +273,6 @@ After:
 
 
 # SELF-EVALUATION
-Cristiano Rocha up202108813 100%  
-Rui Carvalho up202108807 100%  
-Guilherme Ribeiro up202108731 100%  
+Cristiano Rocha up202108813 40%  
+Rui Carvalho up202108807 30%  
+Guilherme Ribeiro up202108731 30%  
