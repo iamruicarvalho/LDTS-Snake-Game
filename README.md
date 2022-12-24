@@ -2,11 +2,7 @@
 
 ### GAME DESCRIPTION
 
-<<<<<<< HEAD
-> The SnakeGame is a basic classic game, where the goal is to be able to capture as much food as you can for the snake and every time the snake eats it, its size grows by one, making the game harder and harder as the game progresses. In the version we 've created, there are 3 levels of difficulty.  
-=======
 > The Snake Game is a classic game in which the objective is to capture as much fruit as possible with a snake. Each time the snake eats fruit, its size increases by one, making the game progressively more difficult. In the version we have created, there are three levels of difficulty.  
->>>>>>> ed15f661cecb2fdf9a09c820566fc706aa27a7b8
 > This project was developed by Cristiano Rocha (up202108183@fe.up.pt), Rui Carvalho (up202108807@fe.up.pt) and Guilherme Ribeiro (up202108731@fe.up.pt) in the context of a practical work on the subject of LDTS at FEUP (Faculdade de Engenharia da Universidade do Porto).
 
 ### IMPLEMENTED FEATURES
@@ -203,9 +199,6 @@ Ultimately, our goal is to create a codebase that is both easy to understand and
 
 * #### Inside /ScoreBoard:
 ![ScoreBoardTestFolder](/Images_Source/ScoreBoardTestFolder.png "ScoreBoardTestFolder")
-
-* #### Inside /states:
-
 
 * #### Inside /viewer:
 ![viewerTestFolder](/Images_Source/viewerTestFolder.png "viewerTestFolder")
