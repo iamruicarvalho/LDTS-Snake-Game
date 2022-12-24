@@ -3,7 +3,11 @@
 ### GAME DESCRIPTION
 
 > The Snake Game is a classic game in which the objective is to capture as much fruit as possible with a snake. Each time the snake eats fruit, its size increases by one, making the game progressively more difficult. In the version we have created, there are three levels of difficulty.  
+<<<<<<< HEAD
 > This project was developed by Cristiano Rocha (up202108183@fe.up.pt), Rui Carvalho (up202108807@fe.up.pt) and Guilherme Ribeiro (up202108731@fe.up.pt) in the context of a practical work on the subject of LDTS at FEUP (Faculdade de Engenharia da Universidade do Porto).
+=======
+This project was developed by Cristiano Rocha (up202108183@fe.up.pt), Rui Carvalho (up202108807@fe.up.pt) and Guilherme Ribeiro (up202108731@fe.up.pt) in the context of a practical work on the subject of LDTS at FEUP (Faculdade de Engenharia da Universidade do Porto).
+>>>>>>> 1e7ea16cec558ea4375bb2c903b816c5e11d4578
 
 ### IMPLEMENTED FEATURES
 
@@ -39,6 +43,9 @@ Enter -> Select option
 
   
 # Screenshots:
+## Gameplay:
+![GamePlay](/Images_Source/GamePlay.gif "GamePlay")
+
 ## MainMenu:
 ![MainMenu](/Images_Source/mainMenu.PNG "MainMenu")
   
@@ -55,7 +62,7 @@ Enter -> Select option
 ![SnakeInPlay](/Images_Source/Game.PNG "Snake") 
   
 ## GameOverMenu
-![GAMEOVER](/Images_Source/gameOverMenu.PNG "GAMEOVER")
+![GameOver](/Images_Source/gameOverMenu.PNG "GameOver")
   
 ### PLANNED FEATURES
 > We thought of implementing a multiplayer mode, in order to have a battle between 2 different players, and a pauseMenu for pausing the game, with options to resume or to go back to the mainMenu.
@@ -141,10 +148,7 @@ We used the FACTORY PATTERN, which is a creation design pattern that provides an
 # DATA CLASS
 
 ## UML DIAGRAM
-![UML](/Images_Source/UML.png "UML")  
-Current UML state with exception to the class food that isn't implemented yet.
-temos de rever o UML e colocar tudo interligado entre si. o stor queixou se disso na apresentação.
-
+![UML](/Images_Source/UML1.png "UML")
 
 # Refactoring suggestions and Code Smells
 
@@ -200,6 +204,12 @@ Ultimately, our goal is to create a codebase that is both easy to understand and
 * #### Inside /ScoreBoard:
 ![ScoreBoardTestFolder](/Images_Source/ScoreBoardTestFolder.png "ScoreBoardTestFolder")
 
+<<<<<<< HEAD
+=======
+* #### Inside /states:
+![statesTestFolder](/Images_Source/statesTestFolder.png "statesTestFolder")
+
+>>>>>>> 1e7ea16cec558ea4375bb2c903b816c5e11d4578
 * #### Inside /viewer:
 ![viewerTestFolder](/Images_Source/viewerTestFolder.png "viewerTestFolder")
 
