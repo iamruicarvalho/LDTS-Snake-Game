@@ -184,9 +184,6 @@ While we believe that we made significant progress in applying these principles 
 Ultimately, our goal is to create a codebase that is both easy to understand and maintain, and we believe that adhering to the SOLID principles is the key to achieving this goal.
 
 
-
-
-
 # TESTING
 ## Mockito/JUnit
 * #### Inside the main test folder:
