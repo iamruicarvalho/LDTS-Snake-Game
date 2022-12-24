@@ -266,6 +266,6 @@ After:
 
 
 # SELF-EVALUATION
-Cristiano Rocha up202108813 100%  
-Rui Carvalho up202108807 100%  
-Guilherme Ribeiro up202108731 100%  
+Cristiano Rocha up202108813 40%  
+Rui Carvalho up202108807 30%  
+Guilherme Ribeiro up202108731 30%  
